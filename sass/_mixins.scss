@@ -13,10 +13,15 @@
 // link hover
 @mixin linkHover {
   border-bottom: 1px solid white;
+  width: fit-content;
   @include transition;
 }
 
 // transition
 @mixin transition {
   transition: all 0.3s ease 0s;
+}
+
+@mixin leftTransition {
+  transition: left 0.3s ease 0s;
 }

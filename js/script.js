@@ -42,3 +42,46 @@ if (isMobile.any()) {
 } else {
   document.body.classList.add('pc');
 }
+
+
+// smooth scrolling
+const menuLinks = document.querySelectorAll('.menu-link[data-goto]');
+if (menuLinks.length > 0) {
+  menuLinks.forEach(menuLink => {
+    menuLink.addEventListener('click', onMenuLinkClick);
+  });
+
+  function onMenuLinkClick(e) {
+    const menuLink = e.target;
+    if (menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
+      const goToBlock = document.querySelector(menuLink.dataset.goto);
+      const goToBlockValue = goToBlock.getBoundingClientRect().top + scrollY - document.querySelector('nav').offsetHeight;
+
+      // remove menu body when going to a section
+      if (iconMenu.classList.contains('active')) {
+        document.body.classList.remove('lock');
+        iconMenu.classList.remove('active');
+        menuBody.classList.remove('active');
+      }
+
+      window.scrollTo({
+        top: goToBlockValue,
+        behavior: 'smooth'
+      });
+      e.preventDefault();
+    }
+  }
+}
+
+
+// hamburger icon
+const iconMenu = document.querySelector('.menu-icon');
+const menuBody = document.querySelector('.menu-body');
+if (iconMenu) {
+  iconMenu.addEventListener('click', function(e) {
+    // remove body scroll
+    document.body.classList.toggle('lock');
+    iconMenu.classList.toggle('active');
+    menuBody.classList.toggle('active');
+  });
+}

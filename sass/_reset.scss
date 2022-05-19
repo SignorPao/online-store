@@ -5,7 +5,8 @@
   margin: 0;
   padding: 0;
   border: 0;
-  border: 1px solid red;
+  scroll-behavior: smooth;
+  // border: 1px solid red;
 }
 
 html, 
@@ -14,6 +15,11 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   font-size: 16px;
+}
+
+// remove scroll when burger is open
+body.lock {
+  overflow: hidden;
 }
 
 img, 

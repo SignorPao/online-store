@@ -6,7 +6,7 @@
   margin: 0;
   padding: 0;
   border: 0;
-  border: 1px solid red;
+  scroll-behavior: smooth;
 }
 
 html,
@@ -15,6 +15,10 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   font-size: 16px;
+}
+
+body.lock {
+  overflow: hidden;
 }
 
 img,
@@ -88,6 +92,7 @@ a {
   color: white;
   font-size: 20px;
   font-weight: 900;
+  z-index: 5;
 }
 .nav .nav-container .menu-icon {
   display: none;
@@ -103,6 +108,9 @@ a {
 }
 .nav .nav-container .menu-list .menu-link:hover {
   border-bottom: 1px solid white;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
@@ -111,7 +119,7 @@ a {
   position: absolute;
   top: 100%;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
   padding: 15px;
   min-width: 200px;
 }
@@ -126,6 +134,9 @@ a {
 }
 .nav .nav-container .menu-list .menu-sub-link:hover {
   border-bottom: 1px solid white;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
@@ -155,6 +166,112 @@ a {
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
     pointer-events: none;
+  }
+}
+@media (max-width: 768px) {
+  .nav .menu-icon {
+    z-index: 5;
+    display: block !important;
+    position: relative;
+    width: 30px;
+    height: 18px;
+    cursor: pointer;
+  }
+  .nav .menu-icon span, .nav .menu-icon::before, .nav .menu-icon::after {
+    left: 0;
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    background-color: white;
+  }
+  .nav .menu-icon::before, .nav .menu-icon::after {
+    content: "";
+  }
+  .nav .menu-icon::before {
+    top: 0;
+  }
+  .nav .menu-icon::after {
+    bottom: 0;
+  }
+  .nav .menu-icon span {
+    top: 50%;
+    -webkit-transform: scale(1) translate(0, -50%);
+        -ms-transform: scale(1) translate(0, -50%);
+            transform: scale(1) translate(0, -50%);
+  }
+  .nav .menu-icon.active span {
+    -webkit-transform: scale(0) translate(0, -50%);
+        -ms-transform: scale(0) translate(0, -50%);
+            transform: scale(0) translate(0, -50%);
+  }
+  .nav .menu-icon.active::before {
+    top: 50%;
+    -webkit-transform: rotate(-45deg) translate(0px, -50%);
+        -ms-transform: rotate(-45deg) translate(0px, -50%);
+            transform: rotate(-45deg) translate(0px, -50%);
+  }
+  .nav .menu-icon.active::after {
+    bottom: 50%;
+    -webkit-transform: rotate(45deg) translate(0px, 50%);
+        -ms-transform: rotate(45deg) translate(0px, 50%);
+            transform: rotate(45deg) translate(0px, 50%);
+  }
+  .nav .menu-body {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 100px 30px 30px 30px;
+    -webkit-transition: left 0.3s ease 0s;
+    -o-transition: left 0.3s ease 0s;
+    transition: left 0.3s ease 0s;
+    overflow: auto;
+  }
+  .nav .menu-body.active {
+    left: 0;
+  }
+  .nav .menu-body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 70px;
+    background-color: darkred;
+    z-index: 2;
+  }
+  .nav .menu-body .menu-list > li {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin: 0px 0px 30px 0px;
+  }
+  .nav .menu-body .menu-list > li.active .menu-sub-list {
+    display: block;
+  }
+  .nav .menu-body .menu-list > li:last-child {
+    margin-bottom: 0px;
+  }
+  .nav .menu-body .menu-list > li .menu-link {
+    font-size: 20px;
+    font-weight: 400;
+  }
+  .nav .menu-body .menu-list > li .menu-sub-list {
+    position: relative;
+    background-color: gray;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+    margin: 20px 0px 0px 0px;
+    display: none;
+  }
+  .nav .menu-body .menu-list > li .menu-sub-list .menu-sub-link {
+    font-size: 19px;
+    font-weight: 400;
   }
 }
 
