@@ -1,2 +1,22 @@
-// fontSize
+// font size & weight
+@mixin fontSize($size:16px, $weight:400) {
+  font-size: $size;
+  font-weight: $weight;
+}
 
+// limit container
+@mixin limitContainer {
+  max-width: 1200px;
+  margin: 0px auto;
+}
+
+// link hover
+@mixin linkHover {
+  border-bottom: 1px solid white;
+  @include transition;
+}
+
+// transition
+@mixin transition {
+  transition: all 0.3s ease 0s;
+}

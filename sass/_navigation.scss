@@ -1,0 +1,128 @@
+/* NAVIGATION */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: darkred;
+
+  .nav-container {
+    @include limitContainer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 70px;
+    padding: 0px 30px;
+
+    .logo {
+      text-transform: uppercase;
+      color: white;
+      @include fontSize(20px, 900)
+    }
+    .nav-menu {
+
+    }
+    .menu {
+
+    }
+    .menu-icon {
+      display: none;
+    }
+    .menu-body {
+    }
+    .menu-list {
+      & > li {
+        position: relative;
+        margin: 0px 0px 0px 20px;
+      }
+      .menu-link {
+        color: white;
+        @include fontSize(18px, 500);
+        &:hover {
+          @include linkHover;
+        }
+      }
+      .menu-sub-list {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 15px;
+        min-width: 200px;
+        li {
+          margin: 0px 0px 10px 0px;
+          &:last-child {
+            margin: 0;
+          }
+        }
+      }
+      .menu-sub-link {
+        color: white;
+        &:hover {
+          @include linkHover;
+        }
+      }
+      .menu-arrow {
+        display: none;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    .menu-list {
+      display: flex;
+      align-items: center;
+      & > li {
+        padding: 10px 0px;
+      }
+      .menu-sub-list {
+        transform: translate(0px, 10%);
+        opacity: 0;
+        visibility: hidden;
+        @include transition;
+        pointer-events: none;
+      }
+    }
+  }
+}
+
+/* pc or touchscreen */
+body.pc .menu-list > li:hover .menu-sub-list {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0px, 0px);
+  pointer-events: all;
+}
+
+body.touch .menu-list > li {
+  display: flex;
+  align-items: center;
+}
+
+body.touch .menu-link {
+  flex: 1 1 auto;
+}
+
+body.touch .menu-arrow {
+  display: block !important;
+  // display: block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 10px solid white;
+  transition: transform 0.3s ease 0s;
+  margin: 0px 0px 0px 5px;
+}
+
+body.touch .menu-list > li.active .menu-sub-list {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0px, 0px);
+  pointer-events: all;
+}
+
+body.touch .menu-list > li.active .menu-arrow {
+  transform: rotate(-180deg);
+}
