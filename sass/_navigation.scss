@@ -6,6 +6,9 @@
   width: 100%;
   z-index: 10;
   background-color: darkred;
+  // font-family: $fontBIZ;
+  // font-family: $fontMontserrat;
+  font-family: $fontPrompt;
 
   .nav-container {
     @include limitContainer;
@@ -20,6 +23,9 @@
       color: white;
       @include fontSize(20px, 900);
       z-index: 5;
+      letter-spacing: 4px;
+      // font-family: $logo1;
+      font-family: $logo2;
     }
     .nav-menu {
 
@@ -40,9 +46,9 @@
       .menu-link {
         color: white;
         @include fontSize(18px, 500);
-        &:hover {
-          @include linkHover;
-        }
+        @include linkHover;
+        // &:hover {
+        // }
       }
       .menu-sub-list {
         position: absolute;
@@ -60,9 +66,9 @@
       }
       .menu-sub-link {
         color: white;
-        &:hover {
-          @include linkHover;
-        }
+        @include linkHover;
+        // &:hover {
+        // }
       }
       .menu-arrow {
         display: none;
@@ -71,7 +77,10 @@
   }
 
   // pc screen
-  @media (min-width: 768px) {
+  @media (min-width: $navToggle) {
+    & {
+      top: 30px;
+    }
     .menu-list {
       display: flex;
       align-items: center;
@@ -89,7 +98,7 @@
   }
 
   // burger menu
-  @media (max-width: 768px) {
+  @media (max-width: $navToggle) {
     .menu-icon {
       z-index: 5;
       display: block !important;

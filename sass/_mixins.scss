@@ -12,9 +12,25 @@
 
 // link hover
 @mixin linkHover {
-  border-bottom: 1px solid white;
-  width: fit-content;
-  @include transition;
+  // border-bottom: 1px solid white;
+  // width: fit-content;
+  // @include transition;
+
+  position: relative;
+  &::before {
+    content: '';
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: $white;
+    transform: scaleX(0);
+    position: absolute;
+    transition: transform .5s ease;
+  }
+  &:hover::before {
+    transform: scaleX(1);
+  }
 }
 
 // transition

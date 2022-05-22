@@ -1,5 +1,35 @@
 // fonts
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@100;200;300;400;500;600;700;800;900&display=swap');
+$fontPrompt: 'Prompt', sans-serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+$fontMontserrat: 'Montserrat', sans-serif;
+
+@import url('https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap');
+$fontBIZ: 'BIZ UDPGothic', sans-serif;
+
+// font logo
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+$logo1: 'Fredoka One', cursive;
+
+@import url('https://fonts.googleapis.com/css2?family=Red+Rose:wght@300;400;500;600;700&display=swap');
+$logo2: 'Red Rose', cursive;
+
 
 
 // colors
+$black: #000000;
+$white: #ffffff;
+$dark-grey: #403D3B;
+$grey: #595756;
+$beige: #F2E8DF;
 
+
+
+// animation duration
+$duration: 60s;
+
+
+
+// breakpoints
+$navToggle: 992px;
