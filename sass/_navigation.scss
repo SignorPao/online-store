@@ -42,7 +42,7 @@
         width: fit-content;
         
         &:hover i,
-        &.menu-sub-list:hover i {
+        &.menu-sub-list i {
           transform: rotate(-180deg);
         }
       }
@@ -56,18 +56,12 @@
           display: inline-block;
           @include transition;
         }
-
-        // &:hover .menu-sub-list {
-        //   display: block !important;
-        //   width: 100%;
-        //   height: auto;
-        // }
       }
       .menu-sub-list {
         position: absolute;
         top: 100%;
         right: 0;
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: rgba(0, 0, 0, 0.9);
         padding: 15px;
         min-width: 200px;
         li {
@@ -103,7 +97,6 @@
         opacity: 0;
         visibility: hidden;
         @include transition;
-        // transition: transform 0.5s ease;
         pointer-events: none;
       }
     }
@@ -169,7 +162,7 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
+      background-color: rgba(0, 0, 0, 0.9);
       padding: 100px 30px 30px 30px;
       @include leftTransition;
       overflow: auto;
@@ -192,23 +185,7 @@
       .menu-list > li {
         flex-wrap: wrap;
         margin: 0px 0px 30px 0px;
-        
-
-
-
-        // !!!!!!!!!!!!!!!!!!!!!
-        // &:hover .menu-sub-list {
-        //   display: block;
-        // }
-        // !!!!!!!!!!!!!!!!!!!!!!!
-
-
-
-        
-        &.active .menu-sub-list {
-          display: block;
-        }
-        
+       
         &:last-child {
           margin-bottom: 0px;
         }
@@ -216,13 +193,17 @@
         .menu-link {
           @include fontSize(20px);
         }
-        
+
         .menu-sub-list {
+          display: none;
           position: relative;
           background-color: transparent;
           flex: 1 1 100%;
           margin: 20px 0px 0px 0px;
-          display: none;
+        }
+        
+        .menu-sub-list.open {
+          display: block;
 
           .menu-sub-link {
             @include fontSize(19px);
@@ -240,19 +221,6 @@ body.pc .menu-list > li:hover .menu-sub-list {
   transform: translate(0px, 0px);
   pointer-events: all;
 }
-
-
-
-
-// !!!!!!!!!!!!!!!!!!!!!
-// body.touch .menu-sub-list {
-//   display: none !important;
-// }
-// !!!!!!!!!!!!!!!!!!!!
-
-
-
-
 
 body.touch .menu-list > li {
   display: flex;
@@ -284,6 +252,7 @@ body.touch .menu-list > li.active .menu-sub-list {
   visibility: visible;
   transform: translate(0px, 0px);
   pointer-events: all;
+  display: block;
 }
 
 body.touch .menu-list > li.active .menu-arrow {

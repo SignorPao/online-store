@@ -85,3 +85,12 @@ if (iconMenu) {
     menuBody.classList.toggle('active');
   });
 }
+
+// accordion for pc
+const burgerLink = document.querySelectorAll('.accordion');
+burgerLink.forEach((e) => {
+  e.addEventListener('click', (event) => {
+    const subMenu = event.target.parentElement.querySelector('.menu-sub-list');
+    subMenu.classList.toggle('open');
+  })
+});
