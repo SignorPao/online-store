@@ -368,9 +368,6 @@ a {
         flex-wrap: wrap;
     margin: 0px 0px 30px 0px;
   }
-  .nav .menu-body .menu-list > li:hover .menu-sub-list {
-    display: block;
-  }
   .nav .menu-body .menu-list > li.active .menu-sub-list {
     display: block;
   }

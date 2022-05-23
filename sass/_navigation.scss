@@ -103,6 +103,7 @@
         opacity: 0;
         visibility: hidden;
         @include transition;
+        // transition: transform 0.5s ease;
         pointer-events: none;
       }
     }
@@ -192,9 +193,17 @@
         flex-wrap: wrap;
         margin: 0px 0px 30px 0px;
         
-        &:hover .menu-sub-list {
-          display: block;
-        }
+
+
+
+        // !!!!!!!!!!!!!!!!!!!!!
+        // &:hover .menu-sub-list {
+        //   display: block;
+        // }
+        // !!!!!!!!!!!!!!!!!!!!!!!
+
+
+
         
         &.active .menu-sub-list {
           display: block;
@@ -231,6 +240,19 @@ body.pc .menu-list > li:hover .menu-sub-list {
   transform: translate(0px, 0px);
   pointer-events: all;
 }
+
+
+
+
+// !!!!!!!!!!!!!!!!!!!!!
+// body.touch .menu-sub-list {
+//   display: none !important;
+// }
+// !!!!!!!!!!!!!!!!!!!!
+
+
+
+
 
 body.touch .menu-list > li {
   display: flex;
