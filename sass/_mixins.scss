@@ -12,10 +12,6 @@
 
 // link hover
 @mixin linkHover {
-  // border-bottom: 1px solid white;
-  // width: fit-content;
-  // @include transition;
-
   position: relative;
   &::before {
     content: '';
@@ -26,7 +22,7 @@
     background: $white;
     transform: scaleX(0);
     position: absolute;
-    transition: transform .5s ease;
+    @include transition;
   }
   &:hover::before {
     transform: scaleX(1);

@@ -45,7 +45,7 @@ if (isMobile.any()) {
 
 
 // smooth scrolling
-const menuLinks = document.querySelectorAll('.menu-link[data-goto]');
+const menuLinks = document.querySelectorAll('.menu-sub-link[data-goto], .menu-link[data-goto]');
 if (menuLinks.length > 0) {
   menuLinks.forEach(menuLink => {
     menuLink.addEventListener('click', onMenuLinkClick);

@@ -6,8 +6,6 @@
   width: 100%;
   z-index: 10;
   background-color: darkred;
-  // font-family: $fontBIZ;
-  // font-family: $fontMontserrat;
   font-family: $fontPrompt;
 
   .nav-container {
@@ -24,7 +22,6 @@
       @include fontSize(20px, 900);
       z-index: 5;
       letter-spacing: 4px;
-      // font-family: $logo1;
       font-family: $logo2;
     }
     .nav-menu {
@@ -42,12 +39,28 @@
       & > li {
         position: relative;
         margin: 0px 0px 0px 20px;
+        width: fit-content;
+        
+        &:hover i,
+        &.menu-sub-list:hover i {
+          transform: rotate(-180deg);
+        }
       }
       .menu-link {
         color: white;
         @include fontSize(18px, 500);
         @include linkHover;
-        // &:hover {
+
+        i {
+          @include fontSize(18px, 400);
+          display: inline-block;
+          @include transition;
+        }
+
+        // &:hover .menu-sub-list {
+        //   display: block !important;
+        //   width: 100%;
+        //   height: auto;
         // }
       }
       .menu-sub-list {
@@ -67,8 +80,6 @@
       .menu-sub-link {
         color: white;
         @include linkHover;
-        // &:hover {
-        // }
       }
       .menu-arrow {
         display: none;
@@ -180,22 +191,26 @@
       .menu-list > li {
         flex-wrap: wrap;
         margin: 0px 0px 30px 0px;
-
+        
+        &:hover .menu-sub-list {
+          display: block;
+        }
+        
         &.active .menu-sub-list {
           display: block;
         }
-
+        
         &:last-child {
           margin-bottom: 0px;
         }
-
+        
         .menu-link {
           @include fontSize(20px);
         }
-
+        
         .menu-sub-list {
           position: relative;
-          background-color: gray;
+          background-color: transparent;
           flex: 1 1 100%;
           margin: 20px 0px 0px 0px;
           display: none;
@@ -220,15 +235,19 @@ body.pc .menu-list > li:hover .menu-sub-list {
 body.touch .menu-list > li {
   display: flex;
   align-items: center;
+  width: 100% !important;
 }
 
 body.touch .menu-link {
   flex: 1 1 auto;
 }
 
+body.touch .menu-link i {
+  display: none !important;
+}
+
 body.touch .menu-arrow {
   display: block !important;
-  // display: block;
   width: 0;
   height: 0;
   border-left: 5px solid transparent;
