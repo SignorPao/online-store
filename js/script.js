@@ -90,7 +90,9 @@ if (iconMenu) {
 const burgerLink = document.querySelectorAll('.accordion');
 burgerLink.forEach((e) => {
   e.addEventListener('click', (event) => {
-    const subMenu = event.target.parentElement.querySelector('.menu-sub-list');
-    subMenu.classList.toggle('open');
+    if (document.body.classList.contains('pc')) {
+      const subMenu = event.target.parentElement.querySelector('.menu-sub-list');
+      subMenu.classList.toggle('open');
+    };
   })
 });

@@ -24,20 +24,15 @@
       letter-spacing: 4px;
       font-family: $logo2;
     }
-    .nav-menu {
-
-    }
-    .menu {
-
-    }
+    // .nav-menu {}
+    // .menu {}
     .menu-icon {
       display: none;
     }
-    .menu-body {
-    }
+    // .menu-body {}
     .menu-list {
       & > li {
-        position: relative;
+        // position: relative;
         margin: 0px 0px 0px 20px;
         width: fit-content;
         
@@ -47,9 +42,9 @@
         }
       }
       .menu-link {
-        color: white;
+        color: $white;
         @include fontSize(18px, 500);
-        @include linkHover;
+        // @include linkHover;
 
         i {
           @include fontSize(18px, 400);
@@ -59,20 +54,25 @@
       }
       .menu-sub-list {
         position: absolute;
-        top: 100%;
+        // top: 100%;
+        left: 0;
         right: 0;
         background-color: rgba(0, 0, 0, 0.9);
         padding: 15px;
         min-width: 200px;
+        // @include limitContainer;
+        // padding: 15px 10vw;
+
         li {
           margin: 0px 0px 10px 0px;
+
           &:last-child {
             margin: 0;
           }
         }
       }
       .menu-sub-link {
-        color: white;
+        color: $white;
         @include linkHover;
       }
       .menu-arrow {
@@ -89,15 +89,19 @@
     .menu-list {
       display: flex;
       align-items: center;
+
       & > li {
         padding: 10px 0px;
       }
+
       .menu-sub-list {
         transform: translate(0px, 10%);
         opacity: 0;
         visibility: hidden;
         @include transition;
         pointer-events: none;
+        display: flex;
+        justify-content: space-around;
       }
     }
   }
@@ -222,6 +226,10 @@ body.pc .menu-list > li:hover .menu-sub-list {
   pointer-events: all;
 }
 
+body.pc .menu-link {
+  @include linkHover;
+}
+
 body.touch .menu-list > li {
   display: flex;
   align-items: center;
@@ -238,13 +246,13 @@ body.touch .menu-link i {
 
 body.touch .menu-arrow {
   display: block !important;
-  width: 0;
-  height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 10px solid white;
-  transition: transform 0.3s ease 0s;
-  margin: 0px 0px 0px 5px;
+  color: $white;
+  @include fontSize(28px, 400);
+  @include transition;
+}
+
+body.touch .menu-list > li.active .menu-arrow {
+  transform: rotate(-180deg);
 }
 
 body.touch .menu-list > li.active .menu-sub-list {
@@ -253,8 +261,4 @@ body.touch .menu-list > li.active .menu-sub-list {
   transform: translate(0px, 0px);
   pointer-events: all;
   display: block;
-}
-
-body.touch .menu-list > li.active .menu-arrow {
-  transform: rotate(-180deg);
 }

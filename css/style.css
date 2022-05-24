@@ -173,7 +173,6 @@ a {
   display: none;
 }
 .nav .nav-container .menu-list > li {
-  position: relative;
   margin: 0px 0px 0px 20px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -185,30 +184,9 @@ a {
           transform: rotate(-180deg);
 }
 .nav .nav-container .menu-list .menu-link {
-  color: white;
+  color: #ffffff;
   font-size: 18px;
   font-weight: 500;
-  position: relative;
-}
-.nav .nav-container .menu-list .menu-link::before {
-  content: "";
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 1px;
-  background: #ffffff;
-  -webkit-transform: scaleX(0);
-      -ms-transform: scaleX(0);
-          transform: scaleX(0);
-  position: absolute;
-  -webkit-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
-}
-.nav .nav-container .menu-list .menu-link:hover::before {
-  -webkit-transform: scaleX(1);
-      -ms-transform: scaleX(1);
-          transform: scaleX(1);
 }
 .nav .nav-container .menu-list .menu-link i {
   font-size: 18px;
@@ -220,7 +198,7 @@ a {
 }
 .nav .nav-container .menu-list .menu-sub-list {
   position: absolute;
-  top: 100%;
+  left: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.9);
   padding: 15px;
@@ -233,7 +211,7 @@ a {
   margin: 0;
 }
 .nav .nav-container .menu-list .menu-sub-link {
-  color: white;
+  color: #ffffff;
   position: relative;
 }
 .nav .nav-container .menu-list .menu-sub-link::before {
@@ -284,6 +262,11 @@ a {
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
     pointer-events: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
   }
 }
 @media (max-width: 992px) {
@@ -403,6 +386,30 @@ body.pc .menu-list > li:hover .menu-sub-list {
   pointer-events: all;
 }
 
+body.pc .menu-link {
+  position: relative;
+}
+body.pc .menu-link::before {
+  content: "";
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: #ffffff;
+  -webkit-transform: scaleX(0);
+      -ms-transform: scaleX(0);
+          transform: scaleX(0);
+  position: absolute;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+body.pc .menu-link:hover::before {
+  -webkit-transform: scaleX(1);
+      -ms-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
 body.touch .menu-list > li {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -425,17 +432,18 @@ body.touch .menu-link i {
 
 body.touch .menu-arrow {
   display: block !important;
-  width: 0;
-  height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 10px solid white;
-  -webkit-transition: -webkit-transform 0.3s ease 0s;
-  transition: -webkit-transform 0.3s ease 0s;
-  -o-transition: transform 0.3s ease 0s;
-  transition: transform 0.3s ease 0s;
-  transition: transform 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
-  margin: 0px 0px 0px 5px;
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 400;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+body.touch .menu-list > li.active .menu-arrow {
+  -webkit-transform: rotate(-180deg);
+      -ms-transform: rotate(-180deg);
+          transform: rotate(-180deg);
 }
 
 body.touch .menu-list > li.active .menu-sub-list {
@@ -446,12 +454,6 @@ body.touch .menu-list > li.active .menu-sub-list {
           transform: translate(0px, 0px);
   pointer-events: all;
   display: block;
-}
-
-body.touch .menu-list > li.active .menu-arrow {
-  -webkit-transform: rotate(-180deg);
-      -ms-transform: rotate(-180deg);
-          transform: rotate(-180deg);
 }
 
 /* HEADER */
