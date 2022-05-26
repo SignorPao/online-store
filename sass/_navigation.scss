@@ -5,7 +5,7 @@
   left: 0;
   width: 100%;
   z-index: 10;
-  background-color: darkred;
+  background-color: $white;
   font-family: $fontPrompt;
 
   .nav-container {
@@ -18,7 +18,7 @@
 
     .logo {
       text-transform: uppercase;
-      color: white;
+      color: $black;
       @include fontSize(20px, 900);
       z-index: 5;
       letter-spacing: 4px;
@@ -41,8 +41,8 @@
         }
       }
       .menu-link {
-        color: $white;
-        @include fontSize(18px, 500);
+        color: $black;
+        @include fontSize(19px, 500);
 
         i {
           @include fontSize(18px, 400);
@@ -54,7 +54,7 @@
         position: absolute;
         left: 0;
         right: 0;
-        background-color: rgba(0, 0, 0, 0.9);
+        background-color: $white;
         padding: 15px;
         min-width: 200px;
 
@@ -67,7 +67,7 @@
         }
       }
       .menu-sub-link {
-        color: $white;
+        color: $black;
         @include linkHover;
       }
       .menu-arrow {
@@ -76,14 +76,14 @@
       .sub-sub-list {
         padding: 10px;
         .sub-sub-link {
-          color: $grey;
+          color: $light-grey;
           @include transition;
         }
         li a {
           pointer-events: none;
         }
         li:hover a {
-          color: $white;
+          color: $black;
         }
       }
     }
@@ -97,6 +97,7 @@
     .menu-list {
       display: flex;
       align-items: center;
+      height: 100%;
 
       & > li {
         padding: 10px 0px;
@@ -111,6 +112,11 @@
         display: flex;
         flex-wrap: nowrap;
         justify-content: space-evenly;
+        padding: 40px 15px 15px 15px !important;
+
+        .menu-sub-link {
+          @include fontSize(17px, 500);
+        }
 
         .sub-sub-list {
           padding: 10px 10px 0 0;
@@ -137,7 +143,7 @@
         height: 10%;
         width: 100%;
         @include transition;
-        background-color: $white;
+        background-color: $black
       }
 
       &::before,
@@ -179,7 +185,7 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.9);
+      background-color: $white;
       padding: 100px 30px 30px 30px;
       @include leftTransition;
       overflow: auto;
@@ -195,7 +201,13 @@
         top: 0;
         left: 0;
         height: 70px;
-        background-color: darkred;
+        background-color: $white;
+        z-index: 2;
+        }
+        
+      &.divider::before {
+        content: '';
+        border-bottom: 1px solid $black;
         z-index: 2;
       }
 
@@ -260,7 +272,7 @@ body.touch .menu-link i {
 
 body.touch .menu-arrow {
   display: block !important;
-  color: $white;
+  color: $black;
   @include fontSize(28px, 400);
   @include transition;
 }
@@ -277,32 +289,3 @@ body.touch .menu-list > li.active .menu-sub-list {
   display: block;
   margin: 0;
 }
-
-// body.touch .menu-sub-list > li {
-//   display: flex;
-//   align-items: center;
-//   width: 100% !important;
-// }
-
-// body.touch .menu-sub-link {
-//   flex: 1 1 auto;
-// }
-
-// .body.touch .menu-arrow-sub {
-//   display: block !important;
-//   color: $white !important;
-//   @include fontSize(28px, 400);
-//   @include transition;
-// }
-
-// body.touch .menu-sub-list > li.active .menu-arrow-sub {
-//   transform: rotate(-180deg);
-// }
-
-// body.touch .menu-sub-list > li.active .sub-sub-list {
-//   opacity: 1;
-//   visibility: visible;
-//   transform: translate(0px, 0px);
-//   pointer-events: all;
-//   display: block;
-// }

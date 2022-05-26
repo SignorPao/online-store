@@ -142,7 +142,7 @@ a {
   left: 0;
   width: 100%;
   z-index: 10;
-  background-color: darkred;
+  background-color: #ffffff;
   font-family: "Prompt", sans-serif;
 }
 .nav .nav-container {
@@ -162,7 +162,7 @@ a {
 }
 .nav .nav-container .logo {
   text-transform: uppercase;
-  color: white;
+  color: #000000;
   font-size: 20px;
   font-weight: 900;
   z-index: 5;
@@ -184,8 +184,8 @@ a {
           transform: rotate(-180deg);
 }
 .nav .nav-container .menu-list .menu-link {
-  color: #ffffff;
-  font-size: 18px;
+  color: #000000;
+  font-size: 19px;
   font-weight: 500;
 }
 .nav .nav-container .menu-list .menu-link i {
@@ -200,7 +200,7 @@ a {
   position: absolute;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: #ffffff;
   padding: 15px;
   min-width: 200px;
 }
@@ -211,7 +211,7 @@ a {
   margin: 0;
 }
 .nav .nav-container .menu-list .menu-sub-link {
-  color: #ffffff;
+  color: #000000;
   position: relative;
 }
 .nav .nav-container .menu-list .menu-sub-link::before {
@@ -220,7 +220,7 @@ a {
   bottom: 0;
   width: 100%;
   height: 1px;
-  background: #ffffff;
+  background: #000000;
   -webkit-transform: scaleX(0);
       -ms-transform: scaleX(0);
           transform: scaleX(0);
@@ -241,7 +241,7 @@ a {
   padding: 10px;
 }
 .nav .nav-container .menu-list .sub-sub-list .sub-sub-link {
-  color: #595756;
+  color: #9b9b9b;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
@@ -250,7 +250,7 @@ a {
   pointer-events: none;
 }
 .nav .nav-container .menu-list .sub-sub-list li:hover a {
-  color: #ffffff;
+  color: #000000;
 }
 @media (min-width: 992px) {
   .nav {
@@ -263,6 +263,7 @@ a {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    height: 100%;
   }
   .nav .menu-list > li {
     padding: 10px 0px;
@@ -285,6 +286,11 @@ a {
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
+    padding: 40px 15px 15px 15px !important;
+  }
+  .nav .menu-list .menu-sub-list .menu-sub-link {
+    font-size: 17px;
+    font-weight: 500;
   }
   .nav .menu-list .menu-sub-list .sub-sub-list {
     padding: 10px 10px 0 0;
@@ -307,7 +313,7 @@ a {
     -webkit-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
-    background-color: #ffffff;
+    background-color: #000000;
   }
   .nav .menu-icon::before, .nav .menu-icon::after {
     content: "";
@@ -347,7 +353,7 @@ a {
     left: -100%;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: #ffffff;
     padding: 100px 30px 30px 30px;
     -webkit-transition: left 0.3s ease 0s;
     -o-transition: left 0.3s ease 0s;
@@ -364,7 +370,12 @@ a {
     top: 0;
     left: 0;
     height: 70px;
-    background-color: darkred;
+    background-color: #ffffff;
+    z-index: 2;
+  }
+  .nav .menu-body.divider::before {
+    content: "";
+    border-bottom: 1px solid #000000;
     z-index: 2;
   }
   .nav .menu-body .menu-list > li {
@@ -417,7 +428,7 @@ body.pc .menu-link::before {
   bottom: 0;
   width: 100%;
   height: 1px;
-  background: #ffffff;
+  background: #000000;
   -webkit-transform: scaleX(0);
       -ms-transform: scaleX(0);
           transform: scaleX(0);
@@ -454,7 +465,7 @@ body.touch .menu-link i {
 
 body.touch .menu-arrow {
   display: block !important;
-  color: #ffffff;
+  color: #000000;
   font-size: 28px;
   font-weight: 400;
   -webkit-transition: all 0.3s ease 0s;
@@ -484,6 +495,7 @@ body.touch .menu-list > li.active .menu-sub-list {
 .page {
   padding: 90px 0 30px 0;
   font-family: "Prompt", sans-serif;
+  background-color: blanchedalmond;
 }
 .page .page-section {
   padding: 30px;
@@ -501,15 +513,6 @@ body.touch .menu-list > li.active .menu-sub-list {
 }
 .page .page-section .page-content p {
   margin: 0 0 20px 0;
-}
-.page .page-section-1 {
-  background-color: aquamarine;
-}
-.page .page-section-2 {
-  background-color: burlywood;
-}
-.page .page-section-3 {
-  background-color: lightskyblue;
 }
 .page .page-sub-title {
   font-size: 30px;

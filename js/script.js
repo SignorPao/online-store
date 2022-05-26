@@ -62,6 +62,7 @@ if (menuLinks.length > 0) {
         document.body.classList.remove('lock');
         iconMenu.classList.remove('active');
         menuBody.classList.remove('active');
+        menuBody.classList.remove('divider');
       }
 
       window.scrollTo({
@@ -79,12 +80,13 @@ const iconMenu = document.querySelector('.menu-icon');
 const menuBody = document.querySelector('.menu-body');
 if (iconMenu) {
   iconMenu.addEventListener('click', function(e) {
-    // remove body scroll
     document.body.classList.toggle('lock');
     iconMenu.classList.toggle('active');
     menuBody.classList.toggle('active');
+    menuBody.classList.toggle('divider');
   });
 }
+
 
 // accordion for pc
 const burgerLink = document.querySelectorAll('.accordion');
