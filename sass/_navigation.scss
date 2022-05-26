@@ -32,7 +32,6 @@
     // .menu-body {}
     .menu-list {
       & > li {
-        // position: relative;
         margin: 0px 0px 0px 20px;
         width: fit-content;
         
@@ -44,7 +43,6 @@
       .menu-link {
         color: $white;
         @include fontSize(18px, 500);
-        // @include linkHover;
 
         i {
           @include fontSize(18px, 400);
@@ -54,14 +52,11 @@
       }
       .menu-sub-list {
         position: absolute;
-        // top: 100%;
         left: 0;
         right: 0;
         background-color: rgba(0, 0, 0, 0.9);
         padding: 15px;
         min-width: 200px;
-        // @include limitContainer;
-        // padding: 15px 10vw;
 
         li {
           margin: 0px 0px 10px 0px;
@@ -77,6 +72,19 @@
       }
       .menu-arrow {
         display: none;
+      }
+      .sub-sub-list {
+        padding: 10px;
+        .sub-sub-link {
+          color: $grey;
+          @include transition;
+        }
+        li a {
+          pointer-events: none;
+        }
+        li:hover a {
+          color: $white;
+        }
       }
     }
   }
@@ -101,7 +109,12 @@
         @include transition;
         pointer-events: none;
         display: flex;
-        justify-content: space-around;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+
+        .sub-sub-list {
+          padding: 10px 10px 0 0;
+        }
       }
     }
   }
@@ -124,7 +137,7 @@
         height: 10%;
         width: 100%;
         @include transition;
-        background-color: white;
+        background-color: $white;
       }
 
       &::before,
@@ -208,6 +221,7 @@
         
         .menu-sub-list.open {
           display: block;
+          margin: 0;
 
           .menu-sub-link {
             @include fontSize(19px);
@@ -261,4 +275,34 @@ body.touch .menu-list > li.active .menu-sub-list {
   transform: translate(0px, 0px);
   pointer-events: all;
   display: block;
+  margin: 0;
 }
+
+// body.touch .menu-sub-list > li {
+//   display: flex;
+//   align-items: center;
+//   width: 100% !important;
+// }
+
+// body.touch .menu-sub-link {
+//   flex: 1 1 auto;
+// }
+
+// .body.touch .menu-arrow-sub {
+//   display: block !important;
+//   color: $white !important;
+//   @include fontSize(28px, 400);
+//   @include transition;
+// }
+
+// body.touch .menu-sub-list > li.active .menu-arrow-sub {
+//   transform: rotate(-180deg);
+// }
+
+// body.touch .menu-sub-list > li.active .sub-sub-list {
+//   opacity: 1;
+//   visibility: visible;
+//   transform: translate(0px, 0px);
+//   pointer-events: all;
+//   display: block;
+// }
