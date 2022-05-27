@@ -37,3 +37,33 @@
 @mixin leftTransition {
   transition: left 0.3s ease 0s;
 }
+
+// button
+@mixin button {
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $black;
+    background: $yellow;
+    padding: 5px 20px;
+    border: none;
+    display: inline-block;
+    @include transition;
+    @include fontSize(12px, 400)
+  }
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(27, 27, 27, .5);
+  }
+  &:active {
+    transform: translateY(-3px);
+  }
+  @media (min-width: $navToggle) {
+    &:link,
+    &:visited {
+      padding: 10px 30px;
+      @include fontSize(16px, 400)
+    }
+  }
+}

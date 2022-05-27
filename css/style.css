@@ -491,11 +491,106 @@ body.touch .menu-list > li.active .menu-sub-list {
 }
 
 /* HEADER */
+.header {
+  top: 70px;
+  background: url("../img/living-room/room-16.jpg") no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  color: #000000;
+  font-family: "Prompt", sans-serif;
+}
+.header .header-container {
+  max-width: 1200px;
+  margin: 0px auto;
+}
+.header .header-container .header-content {
+  padding: 150px 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header .header-container .header-content h1 {
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 200%;
+}
+.header .header-container .header-content h3 {
+  font-size: 14px;
+  font-weight: 300;
+  text-align: center;
+  line-height: 200%;
+}
+.header .header-container .header-content .header-btn {
+  margin-top: 20px;
+}
+.header .header-container .header-content .header-btn .btn:link, .header .header-container .header-content .header-btn .btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000000;
+  background: #F2DC6D;
+  padding: 5px 20px;
+  border: none;
+  display: inline-block;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  font-size: 12px;
+  font-weight: 400;
+}
+.header .header-container .header-content .header-btn .btn:hover {
+  -webkit-transform: translateY(-5px);
+      -ms-transform: translateY(-5px);
+          transform: translateY(-5px);
+  -webkit-box-shadow: 0 10px 20px rgba(27, 27, 27, 0.5);
+          box-shadow: 0 10px 20px rgba(27, 27, 27, 0.5);
+}
+.header .header-container .header-content .header-btn .btn:active {
+  -webkit-transform: translateY(-3px);
+      -ms-transform: translateY(-3px);
+          transform: translateY(-3px);
+}
+@media (min-width: 992px) {
+  .header .header-container .header-content .header-btn .btn:link, .header .header-container .header-content .header-btn .btn:visited {
+    padding: 10px 30px;
+    font-size: 16px;
+    font-weight: 400;
+  }
+}
+@media (min-width: 992px) {
+  .header {
+    top: 100px;
+    background-position: center center;
+  }
+  .header .header-container .header-content h1 {
+    font-size: 40px;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+  .header .header-container .header-content h3 {
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+}
+
 /* MAIN */
 .page {
   padding: 90px 0 30px 0;
   font-family: "Prompt", sans-serif;
-  background-color: blanchedalmond;
+  background-color: #F2E8DF;
 }
 .page .page-section {
   padding: 30px;
