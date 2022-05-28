@@ -5,7 +5,7 @@
   background-size: cover;
   height: 100vh;
   width: 100%;
-  color: $black;
+  color: $beige;
   font-family: $fontPrompt;
   
   .header-container {
@@ -22,13 +22,13 @@
         text-transform: uppercase;
         @include fontSize(24px, 400);
         text-align: center;
-        line-height: 200%;
+        line-height: 150%;
       }
       
       h3 {
         @include fontSize(14px, 300);
         text-align: center;
-        line-height: 200%;
+        line-height: 150%;
       }
 
       .header-btn {
@@ -45,20 +45,22 @@
   @media (min-width: $navToggle) {
     top: 100px;
     background-position: center center;
+    // color: $black;
 
     .header-container {
 
       .header-content {
-        // padding-top: 200px;
 
         h1 {
           @include fontSize(40px, 300);
           letter-spacing: 1px;
+          line-height: 200%;
         }
         
         h3 {
           @include fontSize(20px, 400);
           letter-spacing: 1px;
+          line-height: 200%;
         }
 
         // .header-btn {}

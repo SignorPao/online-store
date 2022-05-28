@@ -263,6 +263,7 @@ body.touch .menu-list > li {
 }
 
 body.touch .menu-link {
+  white-space: nowrap;
   flex: 1 1 auto;
 }
 
