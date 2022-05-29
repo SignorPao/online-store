@@ -5,13 +5,6 @@
   color: $beige;
 
   .footer-container {
-    // display: grid;
-    // grid-template-columns: 1fr;
-    // grid-template-columns: auto;
-    // grid-template-rows: 1fr 1fr 1fr;
-    // grid-template-columns: repeat(4, minmax(0, 1fr));
-    // grid-template-rows: repeat(3, auto);
-    // max-width: 100%;
 
     .feedback-block {
       background: $grey;
@@ -28,7 +21,6 @@
 
         .social-networks {
           text-align: center;
-          // width: 100%;
           display: flex;
           gap: 25px;
 
@@ -102,11 +94,60 @@
     }
 
     .about-block {
-      @include limitContainer;
-      padding: 30px;
+      // @include limitContainer;
+      // padding: 30px;
 
       .about-block-touch {
 
+        .accordion {
+
+          .accordion-wrapper {
+
+            .accordion-section {
+              line-height: 200%;
+              border-bottom: 1px solid $grey;
+              padding: 10px 30px;
+
+              .accordion-title {
+                display: flex;
+                justify-content: space-between;
+                cursor: pointer;
+                color: $beige;
+                @include transition;
+
+                .title {
+                  @include fontSize(16px, 500);
+                }
+                .action-icon {
+
+                }
+                &:hover {
+                  color: $white;
+                }
+              }
+
+              .accordion-list {
+                // max-height: 0;
+                // overflow: hidden;
+                // transition: max-height 0.3s ease-out;
+                
+                .accordion-list-items {
+                  display: none;
+
+                  .list-item {
+                    @include fontSize(14px, 400);
+                    cursor: pointer;
+                    @include transition;
+
+                    &:hover {
+                      color: $white;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
 
       .about-block-pc {
@@ -199,27 +240,39 @@
   }
 
   @media (min-width: 992px) {
+
     .footer-container {
+
       .about-block {
+
         .about-block-touch {
           display: none;
         }
+
         .about-block-pc {
           display: block;
+          @include limitContainer;
+          padding: 30px;
+
           .nav-section {
             display: grid;
             grid-template-columns: repeat(4, minmax(0, 1fr));
+
             .section {
               line-height: 250%;
+
               .section-title {
                 @include fontSize(16px, 500);
-                color: $white;
+                color: $beige;
               }
+
               .section-items {
+
                 .section-item {
                   @include fontSize(14px, 400);
                   cursor: pointer;
                   @include transition;
+
                   &:hover {
                     color: $white;
                   }

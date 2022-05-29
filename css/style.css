@@ -742,10 +742,44 @@ body.touch .menu-list > li.active .menu-sub-list {
 .footer .footer-container .feedback-block .feedback-block-container .subscribe form button:hover {
   background-color: #ffffff;
 }
-.footer .footer-container .about-block {
-  max-width: 1200px;
-  margin: 0px auto;
-  padding: 30px;
+.footer .footer-container .about-block .about-block-touch .accordion .accordion-wrapper .accordion-section {
+  line-height: 200%;
+  border-bottom: 1px solid #595756;
+  padding: 10px 30px;
+}
+.footer .footer-container .about-block .about-block-touch .accordion .accordion-wrapper .accordion-section .accordion-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  cursor: pointer;
+  color: #F2E8DF;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+.footer .footer-container .about-block .about-block-touch .accordion .accordion-wrapper .accordion-section .accordion-title .title {
+  font-size: 16px;
+  font-weight: 500;
+}
+.footer .footer-container .about-block .about-block-touch .accordion .accordion-wrapper .accordion-section .accordion-title:hover {
+  color: #ffffff;
+}
+.footer .footer-container .about-block .about-block-touch .accordion .accordion-wrapper .accordion-section .accordion-list .accordion-list-items {
+  display: none;
+}
+.footer .footer-container .about-block .about-block-touch .accordion .accordion-wrapper .accordion-section .accordion-list .accordion-list-items .list-item {
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+.footer .footer-container .about-block .about-block-touch .accordion .accordion-wrapper .accordion-section .accordion-list .accordion-list-items .list-item:hover {
+  color: #ffffff;
 }
 .footer .footer-container .about-block .about-block-pc {
   display: none;
@@ -851,6 +885,9 @@ body.touch .menu-list > li.active .menu-sub-list {
   }
   .footer .footer-container .about-block .about-block-pc {
     display: block;
+    max-width: 1200px;
+    margin: 0px auto;
+    padding: 30px;
   }
   .footer .footer-container .about-block .about-block-pc .nav-section {
     display: grid;
@@ -862,7 +899,7 @@ body.touch .menu-list > li.active .menu-sub-list {
   .footer .footer-container .about-block .about-block-pc .nav-section .section .section-title {
     font-size: 16px;
     font-weight: 500;
-    color: #ffffff;
+    color: #F2E8DF;
   }
   .footer .footer-container .about-block .about-block-pc .nav-section .section .section-items .section-item {
     font-size: 14px;
