@@ -1,12 +1,33 @@
 /* MAIN */
 .page {
-  padding: 90px 0 30px 0;
-  // font-family: $fontBIZ;
-  // font-family: $fontMontserrat;
+  padding: 30px 0px;
   font-family: $fontPrompt;
-  background-color: $beige;
+  background-color: $white;
 
-  .page-section {
+  .discount {
+    padding: 30px;
+    @include limitContainer;
+    text-align: center;
+
+    h1 {
+      @include fontSize(20px, 400);
+      margin: 0 0 20px 0;
+    }
+
+    .discounts-wrapper {
+      margin: 0 0 20px 0;
+
+      .discount-item p {
+        @include fontSize(14px, 300);
+      }
+    }
+
+    p {
+      @include fontSize(11px, 300);
+    }
+  }
+
+  &-section {
     padding: 30px;
     @include limitContainer;
 
@@ -25,8 +46,59 @@
   // .page-section-1 {}
   // .page-section-2 {}
   // .page-section-3 {}
-  .page-sub-title {
+  // .page-section-4 {}
+  // .page-section-5 {}
+  &-sub-title {
     @include fontSize(30px, 500);
     margin: 0 0 20px 0;
+  }
+
+  @media (min-width: 480px) {
+    .discount {
+
+      .discounts-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 10px;
+      }
+    }
+  }
+
+  @media (min-width: 992px) {
+    .discount {
+
+      h1 {
+        @include fontSize(24px, 400);
+      }
+
+      .discounts-wrapper {
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        row-gap: 10px;
+      }
+    }
+  }
+
+  @media (min-width: $navToggle) {
+    .discount {
+
+      h1  {
+        @include fontSize(34px, 400);
+        margin: 0 0 30px 0;
+      }
+
+      .discounts-wrapper {
+        max-width: 800px;
+        margin: 0 auto 30px;
+
+        .discount-item p {
+          @include fontSize(18px, 300);
+        }
+      }
+      
+      p {
+        @include fontSize(13px, 300);
+      }
+    }
   }
 }

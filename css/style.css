@@ -575,6 +575,9 @@ body.touch .menu-list > li.active .menu-sub-list {
     top: 100px;
     background-position: center center;
   }
+  .header .header-container .header-content {
+    padding: 250px 30px;
+  }
   .header .header-container .header-content h1 {
     font-size: 40px;
     font-weight: 300;
@@ -591,31 +594,90 @@ body.touch .menu-list > li.active .menu-sub-list {
 
 /* MAIN */
 .page {
-  padding: 90px 0 30px 0;
+  padding: 30px 0px;
   font-family: "Prompt", sans-serif;
-  background-color: #F2E8DF;
+  background-color: #ffffff;
 }
-.page .page-section {
+.page .discount {
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0px auto;
+  text-align: center;
+}
+.page .discount h1 {
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0 0 20px 0;
+}
+.page .discount .discounts-wrapper {
+  margin: 0 0 20px 0;
+}
+.page .discount .discounts-wrapper .discount-item p {
+  font-size: 14px;
+  font-weight: 300;
+}
+.page .discount p {
+  font-size: 11px;
+  font-weight: 300;
+}
+.page-section {
   padding: 30px;
   max-width: 1200px;
   margin: 0px auto;
 }
-.page .page-section .page-title {
+.page-section .page-title {
   font-size: 40px;
   font-weight: 900;
   margin: 0 0 20px 0;
 }
-.page .page-section .page-content {
+.page-section .page-content {
   font-size: 18px;
   font-weight: 400;
 }
-.page .page-section .page-content p {
+.page-section .page-content p {
   margin: 0 0 20px 0;
 }
-.page .page-sub-title {
+.page-sub-title {
   font-size: 30px;
   font-weight: 500;
   margin: 0 0 20px 0;
+}
+@media (min-width: 480px) {
+  .page .discount .discounts-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 10px;
+  }
+}
+@media (min-width: 992px) {
+  .page .discount h1 {
+    font-size: 24px;
+    font-weight: 400;
+  }
+  .page .discount .discounts-wrapper {
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    row-gap: 10px;
+  }
+}
+@media (min-width: 1281px) {
+  .page .discount h1 {
+    font-size: 34px;
+    font-weight: 400;
+    margin: 0 0 30px 0;
+  }
+  .page .discount .discounts-wrapper {
+    max-width: 800px;
+    margin: 0 auto 30px;
+  }
+  .page .discount .discounts-wrapper .discount-item p {
+    font-size: 18px;
+    font-weight: 300;
+  }
+  .page .discount p {
+    font-size: 13px;
+    font-weight: 300;
+  }
 }
 
 /* FOOTER */
@@ -742,12 +804,19 @@ body.touch .menu-list > li.active .menu-sub-list {
 .footer .footer-container .feedback-block .feedback-block-container .subscribe form button:hover {
   background-color: #ffffff;
 }
-.footer .footer-container .about-block .about-block-touch .accordion .accordion-wrapper .accordion-section {
-  line-height: 200%;
+.footer .footer-container .about-block .about-block-touch .accordion-section {
+  overflow: hidden;
+  width: 100%;
+  line-height: 210%;
   border-bottom: 1px solid #595756;
   padding: 10px 30px;
 }
-.footer .footer-container .about-block .about-block-touch .accordion .accordion-wrapper .accordion-section .accordion-title {
+.footer .footer-container .about-block .about-block-touch .accordion-section input {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.footer .footer-container .about-block .about-block-touch .accordion-section label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -756,30 +825,45 @@ body.touch .menu-list > li.active .menu-sub-list {
           justify-content: space-between;
   cursor: pointer;
   color: #F2E8DF;
+  font-size: 14px;
+  font-weight: 500;
+}
+.footer .footer-container .about-block .about-block-touch .accordion-section label::after {
+  content: "+";
+  text-align: center;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  font-size: 34px;
+  font-weight: 200;
+}
+.footer .footer-container .about-block .about-block-touch .accordion-section label:hover {
+  color: #ffffff;
+}
+.footer .footer-container .about-block .about-block-touch .accordion-section .accordion-list {
+  max-height: 0;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
-.footer .footer-container .about-block .about-block-touch .accordion .accordion-wrapper .accordion-section .accordion-title .title {
-  font-size: 16px;
-  font-weight: 500;
-}
-.footer .footer-container .about-block .about-block-touch .accordion .accordion-wrapper .accordion-section .accordion-title:hover {
-  color: #ffffff;
-}
-.footer .footer-container .about-block .about-block-touch .accordion .accordion-wrapper .accordion-section .accordion-list .accordion-list-items {
-  display: none;
-}
-.footer .footer-container .about-block .about-block-touch .accordion .accordion-wrapper .accordion-section .accordion-list .accordion-list-items .list-item {
-  font-size: 14px;
+.footer .footer-container .about-block .about-block-touch .accordion-section .accordion-list .list-item {
+  font-size: 13px;
   font-weight: 400;
   cursor: pointer;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
-.footer .footer-container .about-block .about-block-touch .accordion .accordion-wrapper .accordion-section .accordion-list .accordion-list-items .list-item:hover {
+.footer .footer-container .about-block .about-block-touch .accordion-section .accordion-list .list-item:hover {
   color: #ffffff;
+}
+.footer .footer-container .about-block .about-block-touch .accordion-section input:checked + label::after {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.footer .footer-container .about-block .about-block-touch .accordion-section input:checked ~ .accordion-list {
+  max-height: 100vh;
 }
 .footer .footer-container .about-block .about-block-pc {
   display: none;

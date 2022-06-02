@@ -98,7 +98,3 @@ burgerLink.forEach((e) => {
     };
   })
 });
-
-
-// footer accordion
-

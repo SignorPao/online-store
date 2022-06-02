@@ -94,57 +94,67 @@
     }
 
     .about-block {
-      // @include limitContainer;
-      // padding: 30px;
 
       .about-block-touch {
 
-        .accordion {
+        .accordion-section {
+          overflow: hidden;
+          width: 100%;
+          line-height: 210%;
+          border-bottom: 1px solid $grey;
+          padding: 10px 30px;
 
-          .accordion-wrapper {
+          input {
+            position: absolute;
+            opacity: 0;
+            z-index: -1;
+          }
 
-            .accordion-section {
-              line-height: 200%;
-              border-bottom: 1px solid $grey;
-              padding: 10px 30px;
+          label {
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+            color: $beige;
+            @include fontSize(14px, 500);
 
-              .accordion-title {
-                display: flex;
-                justify-content: space-between;
-                cursor: pointer;
-                color: $beige;
-                @include transition;
+            &::after {
+              content: '\002B';
+              text-align: center;
+              @include transition;
+              @include fontSize(34px, 200);
+            }
 
-                .title {
-                  @include fontSize(16px, 500);
-                }
-                .action-icon {
+            &:hover {
+              color: $white;
+            }
+          }
 
-                }
-                &:hover {
-                  color: $white;
-                }
+          .accordion-list {
+            max-height: 0;
+            @include transition;
+
+            .list-item {
+              @include fontSize(13px, 400);
+              cursor: pointer;
+              @include transition;
+
+              &:hover {
+                color: $white;
               }
+            }
+          }
 
-              .accordion-list {
-                // max-height: 0;
-                // overflow: hidden;
-                // transition: max-height 0.3s ease-out;
-                
-                .accordion-list-items {
-                  display: none;
+          input:checked {
 
-                  .list-item {
-                    @include fontSize(14px, 400);
-                    cursor: pointer;
-                    @include transition;
+            + label {
 
-                    &:hover {
-                      color: $white;
-                    }
-                  }
-                }
+              &::after {
+                transform: rotate(45deg);
               }
+            }
+
+            ~ .accordion-list {
+              max-height: 100vh;
             }
           }
         }
@@ -209,22 +219,29 @@
 
   @media (min-width: 768px) {
     .footer-container {
+
       .feedback-block {
+
         .feedback-block-container {
           flex-direction: row;
           justify-content: space-between;
           padding: 40px 30px;
+
           .social-networks {
             order: 2;
           }
+
           .subscribe {
             width: fit-content;
+
             form {
               flex-direction: row;
               gap: 0;
+
               input {
                 width: 350px;
               }
+
               button {
                 width: 150px;
               }
@@ -232,6 +249,7 @@
           }
         }
       }
+
       .privacy-block {
         display: flex;
         justify-content: space-between;
@@ -284,9 +302,4 @@
       }
     }
   }
-
-  // pc screen
-  // @media (min-width: $navToggle) {
-
-  // }
 }

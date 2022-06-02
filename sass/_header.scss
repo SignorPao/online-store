@@ -45,11 +45,11 @@
   @media (min-width: $navToggle) {
     top: 100px;
     background-position: center center;
-    // color: $black;
 
     .header-container {
 
       .header-content {
+        padding: 250px 30px;
 
         h1 {
           @include fontSize(40px, 300);
