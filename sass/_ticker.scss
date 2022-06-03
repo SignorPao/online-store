@@ -35,6 +35,7 @@
     background-color: $grey; 
     padding-left: 100%;
     box-sizing: content-box;
+    z-index: 2;
 
     .ticker {
       display: inline-block;
