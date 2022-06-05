@@ -621,16 +621,16 @@ body.touch .menu-list > li.active .menu-sub-list {
   font-size: 11px;
   font-weight: 300;
 }
-.page-section {
-  padding: 30px;
-  max-width: 1200px;
-  margin: 0px auto;
-}
 .page-section .page-title {
   font-size: 20px;
   font-weight: 400;
   text-align: center;
   margin: 0 0 20px 0;
+}
+.page .seating {
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0px auto;
 }
 .page .seating .seating-content {
   display: grid;
@@ -654,11 +654,68 @@ body.touch .menu-list > li.active .menu-sub-list {
   color: #000000;
   padding-top: 10px;
 }
+.page .living {
+  padding: 30px 0;
+}
+.page .living .living-slider {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+.page .living .living-slider .living-slider-container .living-slide .living-slide-img {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.page .living .living-slider .living-slider-container .living-slide .living-slide-img img.landscape {
+  display: none;
+}
+.page .living .living-slider .swiper-pagination-bullet {
+  border-radius: 0;
+  width: 30px;
+  height: 4px;
+  line-height: 4px;
+  background-color: #fff;
+}
+.page .living .living-slider .swiper-button-prev::after,
+.page .living .living-slider .swiper-button-next::after {
+  color: #ffffff;
+  font-size: 40px;
+}
+.page .living .living-slider .swiper-button-prev::after {
+  position: absolute;
+  left: 20px;
+  -webkit-transition: left 0.3s;
+  -o-transition: left 0.3s;
+  transition: left 0.3s;
+  padding: 20px;
+}
+.page .living .living-slider .swiper-button-prev:hover::after {
+  left: 10px;
+}
+.page .living .living-slider .swiper-button-next::after {
+  position: absolute;
+  right: 20px;
+  -webkit-transition: right 0.3s;
+  -o-transition: right 0.3s;
+  transition: right 0.3s;
+  padding: 20px;
+}
+.page .living .living-slider .swiper-button-next:hover::after {
+  right: 10px;
+}
 @media (min-width: 480px) {
   .page .discount .discounts-wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     row-gap: 10px;
+  }
+  .page .living .living-slider .living-slider-container .living-slide .living-slide-img img.portrait {
+    display: none;
+  }
+  .page .living .living-slider .living-slider-container .living-slide .living-slide-img img.landscape {
+    display: block;
   }
 }
 @media (min-width: 768px) {

@@ -45,7 +45,7 @@ if (isMobile.any()) {
 
 
 // smooth scrolling
-const menuLinks = document.querySelectorAll('.menu-sub-link[data-goto], .menu-link[data-goto]');
+const menuLinks = document.querySelectorAll('.menu-sub-link[data-goto], .menu-link[data-goto], .btn[data-goto]');
 if (menuLinks.length > 0) {
   menuLinks.forEach(menuLink => {
     menuLink.addEventListener('click', onMenuLinkClick);
@@ -98,3 +98,39 @@ burgerLink.forEach((e) => {
     };
   })
 });
+
+
+// swiper slider
+const swiper = new Swiper('.living-slider', {
+  loop: true,
+  speed: 300,
+
+  pagination: {
+    el: '.swiper-pagination',
+    type: 'bullets',
+    clickable: true,
+  },
+
+  navigation: {
+    enabled: false,
+  },
+
+  breakpoints: {
+    992: {
+      slidesPerView: 1.5,
+      spaceBetween: 30,
+
+      navigation: {
+        enabled: true,
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
+      
+      pagination: {
+        enabled: false,
+      }
+    }
+  }
+});
+
+// new Swiper('.living-slider');

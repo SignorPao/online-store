@@ -4,9 +4,22 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-  <link rel="stylesheet" href="./css/style.css">
+  <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+  />
+  <link 
+    rel="stylesheet" 
+    href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+  />
+  <link 
+    rel="stylesheet" 
+    href="./css/style.css"
+  />
   <title>Online Store | Mark Powell</title>
 </head>
 <body>
@@ -99,7 +112,7 @@
           <h1>Furniture made with love</h1>
           <h3>Take up to $1,000 off with the code MP40</h3>
           <div class="header-btn">
-            <a href="#" class="btn">Shop seating</a>
+            <a data-goto=".page-section-1" href="#" class="btn">Shop seating</a>
           </div>
         </div>
       </div>
@@ -200,17 +213,67 @@
           </a>
         </div>
       </section>
-      <section class="page-section page-section-2">
-        <h2 class="page-title">Living Room</h2>
+      <section class="page-section page-section-2 living">
+        <h1 class="page-title">Living Room</h1>
+        <div class="living-slider swiper">
+          <div class="living-slider-container swiper-wrapper">
+            <div class="living-slide swiper-slide">
+              <div class="living-slide-img">
+                <img class="portrait" src="./img/living-room/mobile_room-18.jpg" alt="living-room">
+                <img class="landscape" src="./img/living-room/rsz_room-18-duplicate.jpg" alt="living room">
+              </div>
+            </div>
+            <div class="living-slide swiper-slide">
+              <div class="living-slide-img">
+                <img class="portrait" src="./img/living-room/mobile_room-0 (1).jpg" alt="living-room">
+                <img class="landscape" src="./img/living-room/rsz_room-0.jpg" alt="living room">
+              </div>
+            </div>
+            <div class="living-slide swiper-slide">
+              <div class="living-slide-img">
+                <img class="portrait" src="./img/living-room/mobile_room-14 (1).jpg" alt="living-room">
+                <img class="landscape" src="./img/living-room/rsz_room-14.jpg" alt="living room">
+              </div>
+            </div>
+            <div class="living-slide swiper-slide">
+              <div class="living-slide-img">
+                <img class="portrait" src="./img/living-room/mobile_room-13 (1).jpg" alt="living-room">
+                <img class="landscape" src="./img/living-room/rsz_room-13.jpg" alt="living room">
+              </div>
+            </div>
+            <div class="living-slide swiper-slide">
+              <div class="living-slide-img">
+                <img class="portrait" src="./img/living-room/mobile_room-11 (1).jpg" alt="living-room">
+                <img class="landscape" src="./img/living-room/rsz_room-11.jpg" alt="living room">
+              </div>
+            </div>
+            <div class="living-slide swiper-slide">
+              <div class="living-slide-img">
+                <img class="portrait" src="./img/living-room/mobile_room-9 (1).jpg" alt="living-room">
+                <img class="landscape" src="./img/living-room/rsz_room-9.jpg" alt="living room">
+              </div>
+            </div>
+            <div class="living-slide swiper-slide">
+              <div class="living-slide-img">
+                <img class="portrait" src="./img/living-room/mobile_room-8 (1).jpg" alt="living-room">
+                <img class="landscape" src="./img/living-room/rsz_room-8.jpg" alt="living room">
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <!-- <div class="swiper-scrollbar"></div> -->
+        </div>
       </section>
       <section class="page-section page-section-3">
-        <h2 class="page-title">Kitchen</h2>
+        <h1 class="page-title">Kitchen</h1>
       </section>
       <section class="page-section page-section-4">
-        <h2 class="page-title">Home Office</h2>
+        <h1 class="page-title">Home Office</h1>
       </section>
       <section class="page-section page-section-5">
-        <h2 class="page-title">Bedroom</h2>
+        <h1 class="page-title">Bedroom</h1>
       </section>
     </main>
 
@@ -344,6 +407,7 @@
 
   </div>
 
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
   <script src="./js/script.js"></script>
   
 </body>
