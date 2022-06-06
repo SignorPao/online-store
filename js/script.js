@@ -44,6 +44,31 @@ if (isMobile.any()) {
 }
 
 
+// hide navbar on scroll for mobile
+
+// const nav = document.querySelector('.nav');
+// let scrolly = window.scrollY;
+// window.addEventListener('scroll', () => {
+//   if(scrolly < window.scrollY) {
+//     nav.classList.add('nav-hidden');
+//   } else {
+//     nav.classList.remove('nav-hidden');
+//   }
+//   scrolly = window.scrollY;
+// });
+
+// let prevScrollPos = window.scrollY;
+// window.onscroll = function() {
+//   let currentScrollPos = window.scrollY;
+//   if (currentScrollPos > prevScrollPos) {
+//     document.querySelector('.nav').style.display = 'none';
+//   } else {
+//     document.querySelector('.nav').style.display = 'initial';
+//   }
+//   prevScrollPos = currentScrollPos;
+// }
+
+
 // smooth scrolling
 const menuLinks = document.querySelectorAll('.menu-sub-link[data-goto], .menu-link[data-goto], .btn[data-goto]');
 if (menuLinks.length > 0) {

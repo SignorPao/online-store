@@ -158,16 +158,15 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  min-height: 70px;
+  min-height: 50px;
   padding: 0px 30px;
 }
 .nav .nav-container .logo {
   text-transform: uppercase;
   color: #000000;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 900;
   z-index: 5;
-  letter-spacing: 4px;
   font-family: "Red Rose", cursive;
 }
 .nav .nav-container .menu-icon {
@@ -253,6 +252,13 @@ a {
 .nav .nav-container .menu-list .sub-sub-list li:hover a {
   color: #000000;
 }
+@media (min-width: 320px) {
+  .nav .nav-container .logo {
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 4px;
+  }
+}
 @media (min-width: 1281px) {
   .nav {
     top: 30px;
@@ -302,8 +308,8 @@ a {
     z-index: 5;
     display: block !important;
     position: relative;
-    width: 30px;
-    height: 18px;
+    width: 20px;
+    height: 16px;
     cursor: pointer;
   }
   .nav .menu-icon span, .nav .menu-icon::before, .nav .menu-icon::after {
@@ -370,7 +376,7 @@ a {
     width: 100%;
     top: 0;
     left: 0;
-    height: 70px;
+    height: 50px;
     background-color: #ffffff;
     z-index: 2;
   }
@@ -407,6 +413,23 @@ a {
   .nav .menu-body .menu-list > li .menu-sub-list.open .menu-sub-link {
     font-size: 19px;
     font-weight: 400;
+  }
+}
+@media (min-width: 992px) {
+  .nav .nav-container {
+    min-height: 70px;
+  }
+  .nav .nav-container .logo {
+    font-size: 26px;
+    font-weight: 900;
+  }
+  .nav .nav-container .menu-icon {
+    width: 30px;
+    height: 18px;
+  }
+  .nav .nav-container .menu-body::before {
+    content: "";
+    height: 70px;
   }
 }
 

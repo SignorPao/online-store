@@ -13,15 +13,16 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 70px;
+    // min-height: 70px;
+    min-height: 50px;
     padding: 0px 30px;
 
     .logo {
       text-transform: uppercase;
       color: $black;
-      @include fontSize(20px, 900);
+      @include fontSize(16px, 900);
       z-index: 5;
-      letter-spacing: 4px;
+      // letter-spacing: 1px;
       font-family: $logo2;
     }
     // .nav-menu {}
@@ -87,6 +88,14 @@
         }
       }
     }
+
+    // make logo bigger
+    @media (min-width: 320px) {
+      .logo {
+        @include fontSize(20px, 900);
+        letter-spacing: 4px;
+      }
+    }
   }
 
   // pc screen
@@ -94,6 +103,7 @@
     & {
       top: 30px;
     }
+
     .menu-list {
       display: flex;
       align-items: center;
@@ -131,8 +141,8 @@
       z-index: 5;
       display: block !important;
       position: relative;
-      width: 30px;
-      height: 18px;
+      width: 20px;
+      height: 16px;
       cursor: pointer;
 
       & span,
@@ -200,7 +210,7 @@
         width: 100%;
         top: 0;
         left: 0;
-        height: 70px;
+        height: 50px;
         background-color: $white;
         z-index: 2;
         }
@@ -239,6 +249,27 @@
             @include fontSize(19px);
           }
         }
+      }
+    }
+  }
+
+  // navbar change sizes
+  @media (min-width: 992px) {
+    .nav-container {
+      min-height: 70px;
+
+      .logo {
+        @include fontSize(26px, 900);
+      }
+
+      .menu-icon {
+        width: 30px;
+        height: 18px;
+      }
+
+      .menu-body::before {
+        content: '';
+        height: 70px;
       }
     }
   }
