@@ -85,10 +85,98 @@
           .living-slide-img {
             user-select: none;
 
-            // img.portrait {}
+            img.portrait {
+              position: relative;
+            }
+
+            .pins-mob {
+              position: absolute;
+              border: 20px solid transparent;
+              cursor: pointer;
+            }
 
             img.landscape {
               display: none;
+            }
+
+            .pins-pc {
+              display: none;
+              position: absolute;
+              border: 20px solid transparent;
+              cursor: pointer;
+            }
+
+            .pins-mob .pin-circle,
+            .pins-pc .pin-circle {
+              background: $white;
+              position: absolute;
+              width: 20px;
+              height: 20px;
+              border-radius: 50%;
+              transform: translate(-50%, -50%);
+            }
+
+            .pins-mob .pin-circle::after,
+            .pins-pc .pin-circle::after {
+              content: '';
+              position: absolute;
+              border: 1px solid $black;
+              width: 15px;
+              height: 15px;
+              border-radius: 50%;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              @include transition;
+            }
+
+            .pins-mob:hover .pin-circle::after,
+            .pins-pc:hover .pin-circle::after {
+              content: '';
+              background: $black;
+            }
+
+            .pin-content {
+              position: absolute;
+              background: $white;
+              width: 120px;
+              height: auto;
+              bottom: 25px;
+              padding: 15px 10px;
+              visibility: hidden;
+              opacity: 0;
+              @include transition;
+              transform: translateX(-50%) translateY(-50px);
+              display: flex;
+              flex-direction: column;
+              
+              a {
+                @include fontSize(12px, 400);
+                text-decoration: underline;
+                color: $black;
+              }
+              
+              span {
+                @include fontSize(9px, 300);
+              }
+
+              &::before {
+                content: '';
+                position: absolute;
+                width: 15px;
+                height: 15px;
+                background: $white;
+                bottom: -5px;
+                left: 50px;
+                transform: rotate(45deg);
+              }
+            }
+
+            .pins-mob:hover .pin-content,
+            .pins-pc:hover .pin-content {
+              visibility: visible;
+              opacity: 1;
+              transform: translateX(-50%) translateY(0px);
             }
           }
         }
@@ -99,7 +187,7 @@
         width: 30px;
         height: 4px;
         line-height: 4px;
-        background-color: #fff;
+        background-color: $white;
       } 
 
       .swiper-button-prev::after,
@@ -155,11 +243,13 @@
 
             .living-slide-img {
 
-              img.portrait {
+              img.portrait, 
+              .pins-mob {
                 display: none;
               }
 
-              img.landscape {
+              img.landscape,
+              .pins-pc {
                 display: block;
               }
             }
@@ -258,5 +348,53 @@
         @include fontSize(34px, 400);
       }
     }
+
+    .living {
+
+      .living-slider {
+
+        .living-slider-container {
+
+          .living-slide {
+
+            .living-slide-img {
+              
+              .pin-content {
+                width: 160px;
+
+                a {
+                  @include fontSize(14px, 400);
+                }
+
+                span {
+                  @include fontSize(10px, 300);
+                }
+
+                &::before {
+                  content: '';
+                  left: 73px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
+}
+
+
+// product map
+.product-main {
+  width: 100%;
+  height: 600px;
+  padding: 100px;
+}
+
+
+// product
+.product {
+  width: 100%;
+  height: 600px;
+  padding: 100px;
 }
