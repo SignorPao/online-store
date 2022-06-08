@@ -746,16 +746,16 @@ body.touch .menu-list > li.active .menu-sub-list {
   background: #ffffff;
   width: 120px;
   height: auto;
-  bottom: 25px;
+  bottom: 22px;
   padding: 15px 10px;
   visibility: hidden;
   opacity: 0;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
-  -webkit-transform: translateX(-50%) translateY(-50px);
-      -ms-transform: translateX(-50%) translateY(-50px);
-          transform: translateX(-50%) translateY(-50px);
+  -webkit-transform: translateX(-50%) translateY(0px);
+      -ms-transform: translateX(-50%) translateY(0px);
+          transform: translateX(-50%) translateY(0px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -781,7 +781,7 @@ body.touch .menu-list > li.active .menu-sub-list {
   height: 15px;
   background: #ffffff;
   bottom: -5px;
-  left: 50px;
+  left: 51px;
   -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
           transform: rotate(45deg);
@@ -790,9 +790,6 @@ body.touch .menu-list > li.active .menu-sub-list {
 .page .living .living-slider .living-slider-container .living-slide .living-slide-img .pins-pc:hover .pin-content {
   visibility: visible;
   opacity: 1;
-  -webkit-transform: translateX(-50%) translateY(0px);
-      -ms-transform: translateX(-50%) translateY(0px);
-          transform: translateX(-50%) translateY(0px);
 }
 .page .living .living-slider .swiper-pagination-bullet {
   border-radius: 0;
@@ -805,6 +802,7 @@ body.touch .menu-list > li.active .menu-sub-list {
 .page .living .living-slider .swiper-button-next::after {
   color: #ffffff;
   font-size: 40px;
+  font-weight: 400;
 }
 .page .living .living-slider .swiper-button-prev::after {
   position: absolute;
@@ -828,22 +826,125 @@ body.touch .menu-list > li.active .menu-sub-list {
 .page .living .living-slider .swiper-button-next:hover::after {
   right: 10px;
 }
+.page .kitchen {
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0px auto;
+}
+.page .kitchen .kitchen-content {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.page .kitchen .kitchen-content .kitchen-content-item {
+  position: relative;
+}
+.page .kitchen .kitchen-content .kitchen-content-item .kitchen-image .kitchen-pc {
+  display: none;
+}
+.page .kitchen .kitchen-content .kitchen-content-item .kitchen-description {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  color: #ffffff;
+}
+.page .office {
+  padding: 30px 0;
+}
+.page .office .office-slider {
+  position: relative;
+}
+.page .office .office-slider .office-slider-container {
+  padding: 0px 10px;
+}
+.page .office .office-slider .office-slider-container .office-slide {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.page .office .office-slider .office-slider-container .office-slide h3 {
+  font-size: 13px;
+  font-weight: 500;
+  color: #000000;
+  line-height: 250%;
+  text-transform: capitalize;
+}
+.page .office .office-slider .office-button-next,
+.page .office .office-slider .office-button-prev {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #ffffff;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.page .office .office-slider .office-button-prev::after,
+.page .office .office-slider .office-button-next::after {
+  color: #000000;
+  font-size: 20px;
+  font-weight: 900;
+}
+.page .office .office-slider .office-button-prev {
+  position: absolute;
+  left: 30px;
+  -webkit-transition: left 0.3s;
+  -o-transition: left 0.3s;
+  transition: left 0.3s;
+  padding: 20px;
+}
+.page .office .office-slider .office-button-prev:hover {
+  left: 20px;
+}
+.page .office .office-slider .office-button-next {
+  position: absolute;
+  right: 30px;
+  -webkit-transition: right 0.3s;
+  -o-transition: right 0.3s;
+  transition: right 0.3s;
+  padding: 20px;
+}
+.page .office .office-slider .office-button-next:hover {
+  right: 20px;
+}
+.page .bedroom {
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0px auto;
+}
+.page .bedroom .bedroom-content {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.page .bedroom .bedroom-content .bedroom-content-item {
+  position: relative;
+}
+.page .bedroom .bedroom-content .bedroom-content-item .bedroom-image .bedroom-pc {
+  display: none;
+}
+.page .bedroom .bedroom-content .bedroom-content-item .bedroom-description {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  color: #ffffff;
+}
+@media (min-width: 320px) {
+  .page .office .office-slider .office-slider-container .office-slide h3 {
+    font-size: 16px;
+    font-weight: 500;
+  }
+}
 @media (min-width: 480px) {
   .page .discount .discounts-wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     row-gap: 10px;
   }
-  .page .living .living-slider .living-slider-container .living-slide .living-slide-img img.portrait,
-.page .living .living-slider .living-slider-container .living-slide .living-slide-img .pins-mob {
-    display: none;
-  }
-  .page .living .living-slider .living-slider-container .living-slide .living-slide-img img.landscape,
-.page .living .living-slider .living-slider-container .living-slide .living-slide-img .pins-pc {
-    display: block;
-  }
 }
-@media (min-width: 768px) {
+@media (min-width: 600px) {
   .page .seating .seating-content {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-rows: repeat(2, minmax(0, 1fr));
@@ -858,6 +959,37 @@ body.touch .menu-list > li.active .menu-sub-list {
     position: absolute;
     left: 20px;
     top: 10px;
+  }
+  .page .living .living-slider .living-slider-container .living-slide .living-slide-img img.portrait,
+.page .living .living-slider .living-slider-container .living-slide .living-slide-img .pins-mob {
+    display: none;
+  }
+  .page .living .living-slider .living-slider-container .living-slide .living-slide-img img.landscape,
+.page .living .living-slider .living-slider-container .living-slide .living-slide-img .pins-pc {
+    display: block;
+  }
+  .page .kitchen .kitchen-content {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: auto;
+  }
+  .page .kitchen .kitchen-content .kitchen-content-item .kitchen-image .kitchen-mob {
+    display: none;
+  }
+  .page .kitchen .kitchen-content .kitchen-content-item .kitchen-image .kitchen-pc {
+    display: block;
+  }
+  .page .office .office-slider .office-slider-container {
+    padding: 0px 20px;
+  }
+  .page .bedroom .bedroom-content {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: auto;
+  }
+  .page .bedroom .bedroom-content .bedroom-content-item .bedroom-image .bedroom-mob {
+    display: none;
+  }
+  .page .bedroom .bedroom-content .bedroom-content-item .bedroom-image .bedroom-pc {
+    display: block;
   }
 }
 @media (min-width: 992px) {
@@ -877,6 +1009,19 @@ body.touch .menu-list > li.active .menu-sub-list {
   .page .seating .seating-content .seating-content-item .description h3 {
     font-size: 20px;
     font-weight: 400;
+  }
+  .page .living .living-slider .living-slider-container .living-slide .living-slide-img .pin-content {
+    -webkit-transform: translateX(-50%) translateY(-50px);
+        -ms-transform: translateX(-50%) translateY(-50px);
+            transform: translateX(-50%) translateY(-50px);
+  }
+  .page .living .living-slider .living-slider-container .living-slide .living-slide-img .pins-pc:hover .pin-content {
+    -webkit-transform: translateX(-50%) translateY(0px);
+        -ms-transform: translateX(-50%) translateY(0px);
+            transform: translateX(-50%) translateY(0px);
+  }
+  .page .office .office-slider .office-slider-container {
+    padding: 0px 30px;
   }
 }
 @media (min-width: 1281px) {
@@ -916,15 +1061,19 @@ body.touch .menu-list > li.active .menu-sub-list {
     content: "";
     left: 73px;
   }
+  .page .office {
+    padding: 30px;
+  }
+  .page .office .office-slider .office-slider-container {
+    padding: 0;
+  }
+  .page .office .office-slider .office-slider-container .office-slide h3 {
+    font-size: 18px;
+    font-weight: 600;
+  }
 }
 
 .product-main {
-  width: 100%;
-  height: 600px;
-  padding: 100px;
-}
-
-.product {
   width: 100%;
   height: 600px;
   padding: 100px;

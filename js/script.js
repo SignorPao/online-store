@@ -133,4 +133,37 @@ const swiper = new Swiper('.living-slider', {
   }
 });
 
-// new Swiper('.living-slider');
+
+new Swiper('.office-slider', {
+  loop: false,
+  slidesPerView: 1.3,
+  spaceBetween: 10,
+  speed: 100,
+  navigation: {
+    enabled: false,
+  },
+
+  breakpoints: {
+    600: {
+      slidesPerView: 2.4,
+      spaceBetween: 20,
+
+      navigation: {
+        enabled: true,
+        nextEl: '.office-button-next',
+        prevEl: '.office-button-prev',
+      },
+    },
+
+    992: {
+      slidesPerView: 3.5,
+      slidesPerGroup: 2,
+      spaceBetween: 30,
+      navigation: {
+        enabled: true,
+        nextEl: '.office-button-next',
+        prevEl: '.office-button-prev',
+      },
+    }
+  }
+});
