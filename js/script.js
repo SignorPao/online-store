@@ -147,12 +147,6 @@ new Swiper('.office-slider', {
     600: {
       slidesPerView: 2.4,
       spaceBetween: 20,
-
-      navigation: {
-        enabled: true,
-        nextEl: '.office-button-next',
-        prevEl: '.office-button-prev',
-      },
     },
 
     992: {

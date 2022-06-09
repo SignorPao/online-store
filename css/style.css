@@ -568,6 +568,7 @@ body.touch .menu-list > li.active .menu-sub-list {
   background: #F2DC6D;
   padding: 5px 20px;
   border: none;
+  border-radius: 2px;
   display: inline-block;
   -webkit-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
@@ -931,6 +932,133 @@ body.touch .menu-list > li.active .menu-sub-list {
   right: 5%;
   color: #ffffff;
 }
+.page .about {
+  padding-top: 60px;
+}
+.page .about .about-img {
+  background: url("../img/about/rsz_furniture-manufacture.jpg") no-repeat;
+  background-size: cover;
+  background-position: 50% 70%;
+  width: 100%;
+  height: 90vh;
+  z-index: 1;
+  position: relative;
+}
+.page .about .about-img::before {
+  content: "";
+  background: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  position: absolute;
+}
+.page .about .about-img .about-img-content {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+  z-index: 3;
+  position: absolute;
+}
+.page .about .about-img .about-img-content h1 {
+  color: #F2E8DF;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+  padding: 0 30px;
+}
+.page .about .about-img .about-img-content .about-img-content-btn span {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000000;
+  background: #F2E8DF;
+  padding: 5px 20px;
+  border: none;
+  border-radius: 2px;
+  display: inline-block;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  font-size: 12px;
+  font-weight: 400;
+  cursor: pointer;
+}
+.page .about .about-img .about-img-content .about-img-content-btn span:hover {
+  -webkit-transform: translateY(-5px);
+      -ms-transform: translateY(-5px);
+          transform: translateY(-5px);
+  -webkit-box-shadow: 0 10px 20px rgba(27, 27, 27, 0.5);
+          box-shadow: 0 10px 20px rgba(27, 27, 27, 0.5);
+}
+.page .about .about-img .about-img-content .about-img-content-btn span:active {
+  -webkit-transform: translateY(-3px);
+      -ms-transform: translateY(-3px);
+          transform: translateY(-3px);
+}
+.page .about .about-video {
+  background: #F2E8DF;
+  margin-top: 30px;
+}
+.page .about .about-video h1 {
+  padding: 30px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+.page .about .about-video video {
+  min-width: 100%;
+  max-height: 90vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.page .about .about-video .delivery-icons {
+  padding: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+.page .about .about-video .delivery-icons .delivery-icons-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+.page .about .about-video .delivery-icons .delivery-icons-item .icon {
+  width: 100%;
+  height: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+.page .about .about-video .delivery-icons .delivery-icons-item .text {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  font-size: 12px;
+  font-weight: 300;
+}
+.page .about .about-video .delivery-icons .delivery-icons-item .text p:first-child {
+  font-weight: 500;
+}
 @media (min-width: 320px) {
   .page .office .office-slider .office-slider-container .office-slide h3 {
     font-size: 16px;
@@ -991,6 +1119,14 @@ body.touch .menu-list > li.active .menu-sub-list {
   .page .bedroom .bedroom-content .bedroom-content-item .bedroom-image .bedroom-pc {
     display: block;
   }
+  .page .about .about-video .delivery-icons {
+    padding: 30px 100px;
+  }
+  .page .about .about-video .delivery-icons .delivery-icons-item .text {
+    -webkit-box-flex: 5;
+        -ms-flex: 5;
+            flex: 5;
+  }
 }
 @media (min-width: 992px) {
   .page .discount h1 {
@@ -1022,6 +1158,24 @@ body.touch .menu-list > li.active .menu-sub-list {
   }
   .page .office .office-slider .office-slider-container {
     padding: 0px 30px;
+  }
+  .page .about .about-video .delivery-icons {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 50px;
+    padding: 50px 100px;
+  }
+  .page .about .about-video .delivery-icons .delivery-icons-item .icon {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  .page .about .about-video .delivery-icons .delivery-icons-item .text {
+    -webkit-box-flex: 3;
+        -ms-flex: 3;
+            flex: 3;
   }
 }
 @media (min-width: 1281px) {
@@ -1070,6 +1224,30 @@ body.touch .menu-list > li.active .menu-sub-list {
   .page .office .office-slider .office-slider-container .office-slide h3 {
     font-size: 18px;
     font-weight: 600;
+  }
+  .page .about .about-img .about-img-content h1 {
+    font-size: 30px;
+    font-weight: 400;
+  }
+  .page .about .about-img .about-img-content .about-img-content-btn span {
+    padding: 10px 30px;
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .page .about .about-video {
+    background: #ffffff;
+  }
+  .page .about .about-video h1 {
+    font-size: 34px;
+    font-weight: 400;
+  }
+  .page .about .about-video .delivery-icons {
+    background: #F2E8DF;
+    gap: 120px;
+  }
+  .page .about .about-video .delivery-icons .delivery-icons-item .text {
+    font-size: 14px;
+    font-weight: 300;
   }
 }
 
