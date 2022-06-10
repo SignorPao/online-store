@@ -161,3 +161,36 @@ new Swiper('.office-slider', {
     }
   }
 });
+
+
+new Swiper('.review-slider', {
+  loop: true,
+  autoplay: {
+    delay: 5000,
+  },
+
+  navigation: {
+    enabled: false,
+  },
+
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true
+  },
+
+  pagination: {
+    el: '.review-pagination',
+    type: 'bullets',
+    clickable: true,
+  },
+
+  breakpoints: {
+    600: {
+      navigation: {
+        enabled: true,
+        prevEl: '.review-prev',
+        nextEl: '.review-next',
+      }
+    }
+  }
+})

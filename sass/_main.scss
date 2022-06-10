@@ -1,6 +1,6 @@
 /* MAIN */
 .page {
-  padding: 30px 0px;
+  padding: 30px 0px 0px 0px;
   font-family: $fontPrompt;
   background-color: $white;
 
@@ -344,10 +344,9 @@
   }
 
   .about {
-    padding-top: 60px;
 
     .about-img {
-      background: url('../img/about/rsz_furniture-manufacture.jpg') no-repeat;
+      background: url('../img/about/rsz_furniture-manufacture.webp') no-repeat;
       background-size: cover;
       background-position: 50% 70%;
       width: 100%;
@@ -410,7 +409,7 @@
 
     .about-video {
       background: $beige;
-      margin-top: 30px;
+      padding-top: 30px;
 
       h1 {
         padding: 30px;
@@ -453,7 +452,67 @@
       }
     }
 
-    // .about-reviews {}
+    .about-reviews {
+
+      .review-slider {
+        position: relative;
+
+        .review-slider-container {
+
+          .review-slide {
+            display: flex;
+            flex-direction: column;
+            
+            .review-text {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              background: $beige;
+              padding: 20px 30px;
+              text-align: center;
+              width: 100%;
+              height: 250px;
+
+              h1 {
+                @include fontSize(18px, 400);
+                margin-bottom: 20px;
+              }
+              
+              p {
+                @include fontSize(13px, 300);
+              }
+            }
+          }
+        }
+
+        .review-pagination {
+          position: absolute;
+          bottom: 220px;
+
+          span {
+            border-radius: 0;
+            width: 15px;
+            height: 4px;
+            line-height: 4px;
+            background-color: $black;
+            margin: 0 2px;
+          }
+        }
+
+        .review-prev::after,
+        .review-next::after {
+          color: $black;
+          @include fontSize(24px, 300);
+          opacity: .5;
+        }
+
+        .review-next {
+          position: absolute;
+          right: 52%;
+        }
+      }
+    }
   }
 
   @media (min-width: 320px) {
@@ -590,6 +649,24 @@
             .text {
               flex: 5;
             }
+          }
+        }
+      }
+      .about-reviews {
+        .review-slider {
+          .review-slider-container {
+            .review-slide {
+              display: grid;
+              grid-template-columns: repeat(2, minmax(0, 1fr));
+
+              .review-text {
+                height: 100%;
+              }
+            }
+          }
+          .review-pagination {
+            bottom: 60px;
+            left: 25%;
           }
         }
       }
@@ -758,6 +835,7 @@
 
     .about {
       .about-img {
+        margin: 60px 0;
         .about-img-content {
           h1 {
             @include fontSize(30px, 400);
@@ -783,11 +861,31 @@
           }
         }
       }
+      .about-reviews {
+        .review-slider {
+          .review-slider-container {
+            .review-slide {
+              .review-text {
+                padding: 20px 150px;
+                h1 {
+                  @include fontSize(30px, 400);
+                  margin-bottom: 50px;
+                }
+                p {
+                  @include fontSize(15px, 300);
+                }
+              }
+            }
+          }
+          .review-prev::after,
+          .review-next::after {
+            @include fontSize(34px, 300);
+          }
+        }
+      }
     }
   }
 }
-
-
 
 
 
