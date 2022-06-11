@@ -13,7 +13,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    // min-height: 70px;
     min-height: 50px;
     padding: 0px 30px;
 
@@ -22,7 +21,6 @@
       color: $black;
       @include fontSize(16px, 900);
       z-index: 5;
-      // letter-spacing: 1px;
       font-family: $logo2;
     }
     // .nav-menu {}
@@ -73,6 +71,10 @@
         @include linkHover;
         text-transform: capitalize;
       }
+      .about-pic-link, 
+      .about-pic-link-text {
+        display: none;
+      }
       .menu-arrow {
         display: none;
       }
@@ -81,6 +83,9 @@
         .sub-sub-link {
           color: $light-grey;
           @include transition;
+        }
+        li:first-child {
+          display: none;
         }
         li a {
           pointer-events: none;
@@ -130,8 +135,49 @@
           @include fontSize(17px, 500);
         }
 
+        .about-pic-link {
+          display: block;
+          margin-top: 10px;
+
+          img {
+            display: block;
+            width: 250px;
+            height: 150px;
+            object-fit: cover;
+          }
+        }
+
+        .about-pic-link-text {
+          display: inline-block;
+          text-transform: uppercase;
+          margin-top: 15px;
+          @include fontSize(13px, 400);
+          text-decoration: underline;
+          cursor: pointer;
+          @include transition;
+          
+          &:hover {
+            text-decoration: none;
+          }
+        }
+
         .sub-sub-list {
           padding: 10px 10px 0 0;
+
+          li:first-child {
+            display: block;
+          }
+
+          .nav-pic-link {
+            pointer-events: auto;
+
+            img {
+              display: block;
+              width: 150px;
+              height: 150px;
+              object-fit: cover;
+            }
+          }
         }
       }
     }
