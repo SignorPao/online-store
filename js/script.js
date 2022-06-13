@@ -193,4 +193,88 @@ new Swiper('.review-slider', {
       }
     }
   }
-})
+});
+
+
+// product.html
+const swiperProduct = new Swiper('.choice-slider', {
+  // loop: true,
+  slidesPerView: 1,
+  spaceBetween: 0,
+
+  pagination: {
+    el: '.choice-pagination',
+    type: 'bullets',
+    clickable: true,
+  },
+});
+
+
+// product select color
+let showImg = document.querySelector('.show'),
+    fabricColor = document.querySelector('.fabric-color'),
+    btnBrown = document.querySelector('.color-one'),
+    btnBlue = document.querySelector('.color-two');
+btnBrown.addEventListener('click', () => {
+  showImg.src = '../img/product/rsz_product-1.webp';
+  fabricColor.innerHTML = 'Brown';
+  btnBrown.classList.add('active');
+  if (btnBrown.classList.contains('active')) {
+    btnBlue.classList.remove('active');
+  }
+});
+btnBlue.addEventListener('click', () => {
+  showImg.src = '../img/product/rsz_product-0.webp';
+  fabricColor.innerHTML = 'Blue';
+  btnBlue.classList.add('active');
+  if (btnBlue.classList.contains('active')) {
+    btnBrown.classList.remove('active');
+  }
+});
+
+
+// add some upgrades
+let price = document.getElementById('price');
+let totalPrice = 1890;
+price.innerHTML = totalPrice;
+function getOption() {
+  let check350 = document.getElementById('add350');
+  if (check350.checked == true) {
+    return totalPrice = 1890 + 350;
+  } else {
+    return totalPrice;
+  }
+}
+
+// let check350 = document.querySelector('.add350'),
+//     check250 = document.querySelector('.add250'),
+//     upgradeOne = document.querySelector('.upgrade-one'),
+//     upgradeTwo = document.querySelector('.upgrade-two'),
+//     price = document.querySelector('span.price');
+// let total = '1980';
+// price.innerHTML = `${total}`;
+check350.addEventListener('click', (e) => {
+  if (e.target.checked) {
+    // price.innerHTML = `${upgradeOne.textContent}`;
+    // price.textContent = `${2330}`;
+    // return (total = '2330');
+  } else {
+    // price.innerHTML = `${price.textContent}`;
+    // price.textContent = `${1980}`;
+  }
+});
+
+
+// function changePrice() {
+//   if (check350.checked) {
+//     price.textContent = '100';
+//   }
+// }
+
+// const options = document.querySelectorAll('.upgrades-options'),
+//       optionsBtn = document.querySelectorAll('input[type=checkbox]');
+// optionsBtn.forEach((e) => {
+//   e.addEventListener('click', (elem) => {
+//     options = elem.target.parentNode.classList.toggle('active');
+//   });
+// });
