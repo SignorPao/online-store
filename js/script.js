@@ -198,14 +198,30 @@ new Swiper('.review-slider', {
 
 // product.html
 const swiperProduct = new Swiper('.choice-slider', {
-  // loop: true,
   slidesPerView: 1,
   spaceBetween: 0,
 
   pagination: {
+    enabled: true,
     el: '.choice-pagination',
     type: 'bullets',
     clickable: true,
+  },
+
+  breakpoints: {
+    992: {
+      pagination: {
+        enabled: false,
+      },
+    }
+  },
+
+  thumbs: {
+    swiper: {
+      el: '.choice-slider-thumbs',
+      slidesPerView: 7,
+      spaceBetween: 10,
+    }
   },
 });
 
@@ -234,47 +250,26 @@ btnBlue.addEventListener('click', () => {
 
 
 // add some upgrades
-let price = document.getElementById('price');
-let totalPrice = 1890;
-price.innerHTML = totalPrice;
-function getOption() {
-  let check350 = document.getElementById('add350');
-  if (check350.checked == true) {
-    return totalPrice = 1890 + 350;
+let totalPrice = document.querySelector('#price'),
+    price = 1890;
+totalPrice.textContent = price;
+function isChange() {
+  if(document.getElementById('add350').checked){
+    price += 350;
+    totalPrice.textContent = price;
+    document.getElementById('ottoman').style.display = 'inline';
   } else {
-    return totalPrice;
+    price -= 350;
+    totalPrice.textContent = price;
+    document.getElementById('ottoman').style.display = 'none';
   }
 }
-
-// let check350 = document.querySelector('.add350'),
-//     check250 = document.querySelector('.add250'),
-//     upgradeOne = document.querySelector('.upgrade-one'),
-//     upgradeTwo = document.querySelector('.upgrade-two'),
-//     price = document.querySelector('span.price');
-// let total = '1980';
-// price.innerHTML = `${total}`;
-check350.addEventListener('click', (e) => {
-  if (e.target.checked) {
-    // price.innerHTML = `${upgradeOne.textContent}`;
-    // price.textContent = `${2330}`;
-    // return (total = '2330');
+function isChangeTwo() {
+  if(document.getElementById('add250').checked){
+    price += 250;
+    totalPrice.textContent = price;
   } else {
-    // price.innerHTML = `${price.textContent}`;
-    // price.textContent = `${1980}`;
+    price -= 250;
+    totalPrice.textContent = price;
   }
-});
-
-
-// function changePrice() {
-//   if (check350.checked) {
-//     price.textContent = '100';
-//   }
-// }
-
-// const options = document.querySelectorAll('.upgrades-options'),
-//       optionsBtn = document.querySelectorAll('input[type=checkbox]');
-// optionsBtn.forEach((e) => {
-//   e.addEventListener('click', (elem) => {
-//     options = elem.target.parentNode.classList.toggle('active');
-//   });
-// });
+}

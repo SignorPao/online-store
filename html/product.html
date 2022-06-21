@@ -177,14 +177,30 @@
               </div>
             </div>
             <div class="choice-pagination swiper-pagination"></div>
-            <!-- <div class="swiper-button-prev"></div> -->
-            <!-- <div class="swiper-button-next"></div> -->
-            <!-- <div class="swiper-scrollbar"></div> -->
+          </div>
+          <div class="choice-slider-thumbs swiper">
+            <div class="thumbs-container swiper-wrapper">
+              <div class="thumbs-slide swiper-slide">
+                <img src="../img/product/rsz_product-1.webp" alt="product thumb">
+              </div>
+              <div class="thumbs-slide swiper-slide">
+                <img src="../img/product/rsz_product-2.webp" alt="product thumb">
+              </div>
+              <div class="thumbs-slide swiper-slide">
+                <img src="../img/product/rsz_product-3.webp" alt="product thumb">
+              </div>
+              <div class="thumbs-slide swiper-slide">
+                <img src="../img/product/rsz_product-4.webp" alt="product thumb">
+              </div>
+              <div class="thumbs-slide swiper-slide">
+                <img src="../img/product/rsz_product-5.webp" alt="product thumb">
+              </div>
+            </div>
           </div>
         </div>
         <div class="choice-block-title">
           <div class="title-wrap">
-            <h2 class="product-title">Range 2-Piece Sofa</h2>
+            <h2 class="product-title">Range 2-Piece Sofa <span id="ottoman">with Ottoman</span></h2>
           </div>
           <div class="rating-wrap">
             <span class="stars">
@@ -199,7 +215,7 @@
         </div>
         <div class="choice-block-details">
           <div class="price">
-            <h3>$<span id="price"></span> + Free Shipping</h3>
+            <h3>$<span id="price"></span> <i class="uil uil-plus"></i> Free Shipping</h3>
           </div>
           <div class="color">
             <div class="color-title">
@@ -216,25 +232,40 @@
               Upgrades
             </div>
             <div class="upgrades-options">
-              <input type="checkbox" id="add350" onclick="getOption()">
+              <input type="checkbox" id="add350" onclick="isChange()">
               <span>Add attachable ottoman</span>
-              <span>+ $<span id="upgrade-one">350</span></span>
-              <span>?</span>
+              <span><i class="uil uil-plus"></i>$<span id="upgrade-one">350</span></span>
+              <span class="question"><img src="../img/product/question.png"></span>
             </div>
             <div class="upgrades-options">
-              <input type="checkbox" id="add250">
+              <input type="checkbox" id="add250" onclick="isChangeTwo()">
               <span>Sleep Kit</span>
-              <span>+ $<span id="upgrade-two">250</span></span>
-              <span>?</span>
+              <span><i class="uil uil-plus"></i>$<span id="upgrade-two">250</span></span>
+              <span class="question"><img src="../img/product/question.png"></span>
             </div>
           </div>
           <div class="add">
-            <div class="add-select"></div>
-            <div class="add-btn">
-              <span>Add to cart</span>
+            <div class="add-wrapper">
+              <select class="add-select">
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+              <div class="add-btn">
+                <span>Add to cart</span>
+              </div>
             </div>
             <div class="add-info-one">
-              <span>In stock! Free delivery in 5–10 business days</span><span>?</span>
+              <span>In stock! Free delivery in 5–10 business </span>
+              <span>days</span>
+              <span class="question"><img src="../img/product/question.png"></span>
             </div>
             <div class="add-info-two">
               <p>
@@ -244,6 +275,165 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="about-block">
+        <div class="about-block-text">
+          <h2>About this piece</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed sodales eros. Duis posuere arcu quis ligula eleifend dapibus. Morbi aliquam egestas justo, a tempus mauris varius sed. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis molestie feugiat sapien. Morbi varius ex quis ligula rhoncus, quis auctor lacus faucibus. Fusce aliquet, mauris in efficitur luctus, magna mauris accumsan magna, sodales pulvinar urna nisl a urna.</p>
+        </div>
+        <div class="about-block-features">
+          <h2>Key Features</h2>
+          <div class="features-container">
+            <div class="features-item">
+              <div class="features-item-icon">
+                <img src="../img/product/features-1.png" alt="">
+              </div>
+              <div class="features-item-text">
+                <h3>Modular platform</h3>
+                <p>Cras efficitur ipsum turpis. Aliquam risus quam, eleifend quis iaculis ut, convallis in mauris</p>
+              </div>
+            </div>
+            <div class="features-item">
+              <div class="features-item-icon">
+                <img src="../img/product/features-2.png" alt="">
+              </div>
+              <div class="features-item-text">
+                <h3>Comfortable cushions</h3>
+                <p>Donec nec arcu rhoncus magna porttitor tempus vitae in nisl</p>
+              </div>
+            </div>
+            <div class="features-item">
+              <div class="features-item-icon">
+                <img src="../img/product/features-3.png" alt="">
+              </div>
+              <div class="features-item-text">
+                <h3>Durable fabric</h3>
+                <p>Praesent sed orci tempus, sollicitudin nisi varius, tempor quam. Curabitur vulputate scelerisque vulputate</p>
+              </div>
+            </div>
+            <div class="features-item">
+              <div class="features-item-icon">
+                <img src="../img/product/features-4.png" alt="">
+              </div>
+              <div class="features-item-text">
+                <h3>Versatile design</h3>
+                <p>Duis posuere, justo quis venenatis auctor, nibh turpis vehicula arcu, vel ultricies risus purus vitae magna</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reviews-block">
+        <div class="reviews-block-header">
+          <h2>Reviews</h2>
+          <div class="rating-wrap">
+            <span class="stars">
+              <span><img src="../img/product/star-1.png" alt="star-icon"></span>
+              <span><img src="../img/product/star-1.png" alt="star-icon"></span>
+              <span><img src="../img/product/star-1.png" alt="star-icon"></span>
+              <span><img src="../img/product/star-1.png" alt="star-icon"></span>
+              <span><img src="../img/product/star-half-1.png" alt="half-star-icon"></span>
+            </span>
+            <a href="#" class="reviews">25 Reviews</a>
+          </div>
+        </div>
+        <div class="reviews-block-posts">
+          <div class="post">
+            <div class="post-head">
+              <div class="user">
+                <div class="user-avatar"><span></span></div>
+                <div class="user-about">
+                  <h4>Peggy Sue <span>verified buyer</span></h4>
+                  <div class="rating-wrap">
+                    <span class="stars">
+                      <span><img src="../img/product/star-1.png" alt="star-icon"></span>
+                      <span><img src="../img/product/star-1.png" alt="star-icon"></span>
+                      <span><img src="../img/product/star-1.png" alt="star-icon"></span>
+                      <span><img src="../img/product/star-1.png" alt="star-icon"></span>
+                      <span><img src="../img/product/star-1.png" alt="star-icon"></span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="date">06/21/22</div>
+            </div>
+            <div class="post-body">
+              <h3>Nulla dictum elementum ipsum</h3>
+              <p>Nunc vulputate tempus turpis, sed laoreet lacus faucibus sed. Proin a nisl facilisis tortor lobortis varius ut vitae velit. Nulla eget massa a tellus sodales volutpat. Nam sodales turpis quis nunc volutpat condimentum. Praesent aliquam vel enim quis vulputate...<span>Read more</span></p>
+              <div class="pic">
+                <img src="../img/product/review.webp" alt="review-picture">
+              </div>
+            </div>
+            <div class="post-link">Donec at arcu vitae est interdum pretium</div>
+          </div>
+          <div class="post">
+            <div class="post-head">
+              <div class="user">
+                <div class="user-avatar"><span></span></div>
+                <div class="user-about">
+                  <h4>Peggy Sue <span>verified buyer</span></h4>
+                  <div class="rating-wrap">
+                    <span class="stars">
+                      <span><img src="../img/product/star-1.png" alt="star-icon"></span>
+                      <span><img src="../img/product/star-1.png" alt="star-icon"></span>
+                      <span><img src="../img/product/star-1.png" alt="star-icon"></span>
+                      <span><img src="../img/product/star-1.png" alt="star-icon"></span>
+                      <span><img src="../img/product/star-1.png" alt="star-icon"></span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="date">06/21/22</div>
+            </div>
+            <div class="post-body">
+              <h3>Nulla dictum elementum ipsum</h3>
+              <p>Nunc vulputate tempus turpis, sed laoreet lacus faucibus sed. Proin a nisl facilisis tortor lobortis varius ut vitae velit. Nulla eget massa a tellus sodales volutpat. Nam sodales turpis quis nunc volutpat condimentum. Praesent aliquam vel enim quis vulputate...<span>Read more</span></p>
+              <div class="pic">
+                <img src="../img/product/review.webp" alt="review-picture">
+              </div>
+            </div>
+            <div class="post-link">Donec at arcu vitae est interdum pretium</div>
+          </div>
+          <div class="post">
+            <div class="post-head">
+              <div class="user">
+                <div class="user-avatar"><span></span></div>
+                <div class="user-about">
+                  <h4>Peggy Sue <span>verified buyer</span></h4>
+                  <div class="rating-wrap">
+                    <span class="stars">
+                      <span><img src="../img/product/star-1.png" alt="star-icon"></span>
+                      <span><img src="../img/product/star-1.png" alt="star-icon"></span>
+                      <span><img src="../img/product/star-1.png" alt="star-icon"></span>
+                      <span><img src="../img/product/star-1.png" alt="star-icon"></span>
+                      <span><img src="../img/product/star-1.png" alt="star-icon"></span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="date">06/21/22</div>
+            </div>
+            <div class="post-body">
+              <h3>Nulla dictum elementum ipsum</h3>
+              <p>Nunc vulputate tempus turpis, sed laoreet lacus faucibus sed. Proin a nisl facilisis tortor lobortis varius ut vitae velit. Nulla eget massa a tellus sodales volutpat. Nam sodales turpis quis nunc volutpat condimentum. Praesent aliquam vel enim quis vulputate...<span>Read more</span></p>
+              <div class="pic">
+                <img src="../img/product/review.webp" alt="review-picture">
+              </div>
+            </div>
+            <div class="post-link">Donec at arcu vitae est interdum pretium</div>
+          </div>
+        </div>
+        <!-- <div class="reviews-block-pag">
+          <div class="pag-container">
+            <span>&lt;</span>
+            <span class="active-pag">1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+            <span>&gt;</span>
+          </div>
+        </div> -->
       </div>
     </main>
 
@@ -259,7 +449,6 @@
             <div class="subscribe">
               <form class="newsletter" autocomplete="on">
                 <input type="email" name="email" autocomplete="email" aria-label="email" placeholder="your-email@example.com">
-                <!-- <label for="email">Email</label> -->
                 <button type="submit">Subscribe</button>
               </form>
             </div>
