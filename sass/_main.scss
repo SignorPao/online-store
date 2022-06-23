@@ -424,6 +424,15 @@
         object-fit: cover;
       }
 
+      .img-for-touch {
+        background: url('../img/about/rsz_furniture-delivery.webp') no-repeat;
+        background-size: cover;
+        background-position: center center;
+        width: 100%;
+        height: 50vh;
+        display: none;
+      }
+
       .delivery-icons {
         padding: 30px;
         display: flex;

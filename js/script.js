@@ -119,7 +119,11 @@ const swiper = new Swiper('.living-slider', {
     992: {
       slidesPerView: 1.5,
       spaceBetween: 30,
+    },
 
+    1281: {
+      slidesPerView: 1.5,
+      spaceBetween: 30,
       navigation: {
         enabled: true,
         nextEl: '.swiper-button-next',
@@ -150,6 +154,12 @@ new Swiper('.office-slider', {
     },
 
     992: {
+      slidesPerView: 3.5,
+      slidesPerGroup: 2,
+      spaceBetween: 30,
+    },
+
+    1281: {
       slidesPerView: 3.5,
       slidesPerGroup: 2,
       spaceBetween: 30,
@@ -194,6 +204,15 @@ new Swiper('.review-slider', {
     }
   }
 });
+
+
+// replace video with image for touchscreen
+const videoBlock = document.querySelector('video'),
+      imageBlock = document.querySelector('.img-for-touch');
+if (document.body.classList.contains('touch')) {
+  videoBlock.style.display = 'none';
+  imageBlock.style.display = 'block';
+}
 
 
 // product.html
