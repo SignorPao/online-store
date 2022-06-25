@@ -206,13 +206,18 @@ new Swiper('.review-slider', {
 });
 
 
-// replace video with image for touchscreen
-const videoBlock = document.querySelector('video'),
-      imageBlock = document.querySelector('.img-for-touch');
-if (document.body.classList.contains('touch')) {
-  videoBlock.style.display = 'none';
-  imageBlock.style.display = 'block';
-}
+// add opacity when nav menu is open
+// const navSubList = document.querySelectorAll('.menu-sub-list'),
+//       allPage = document.querySelectorAll('.header, .page, .footer');
+// navSubList.forEach(sub => {
+//   sub.addEventListener('mouseover', () => {
+//     if (sub.style.visibility == visible) {
+//       allPage.forEach(el => {
+//         el.classList.toggle('overlay');
+//       });
+//     }
+//   });
+// });
 
 
 // product.html
@@ -250,28 +255,34 @@ let showImg = document.querySelector('.show'),
     fabricColor = document.querySelector('.fabric-color'),
     btnBrown = document.querySelector('.color-one'),
     btnBlue = document.querySelector('.color-two');
-btnBrown.addEventListener('click', () => {
-  showImg.src = '../img/product/rsz_product-1.webp';
-  fabricColor.innerHTML = 'Brown';
-  btnBrown.classList.add('active');
-  if (btnBrown.classList.contains('active')) {
-    btnBlue.classList.remove('active');
-  }
-});
-btnBlue.addEventListener('click', () => {
-  showImg.src = '../img/product/rsz_product-0.webp';
-  fabricColor.innerHTML = 'Blue';
-  btnBlue.classList.add('active');
-  if (btnBlue.classList.contains('active')) {
-    btnBrown.classList.remove('active');
-  }
-});
+if (btnBrown) {
+  btnBrown.addEventListener('click', () => {
+    showImg.src = '../img/product/rsz_product-1.webp';
+    fabricColor.innerHTML = 'Brown';
+    btnBrown.classList.add('active');
+    if (btnBrown.classList.contains('active')) {
+      btnBlue.classList.remove('active');
+    }
+  });
+}
+if (btnBlue) {
+  btnBlue.addEventListener('click', () => {
+    showImg.src = '../img/product/rsz_product-0.webp';
+    fabricColor.innerHTML = 'Blue';
+    btnBlue.classList.add('active');
+    if (btnBlue.classList.contains('active')) {
+      btnBrown.classList.remove('active');
+    }
+  });
+}
 
 
 // add some upgrades
 let totalPrice = document.querySelector('#price'),
     price = 1890;
-totalPrice.textContent = price;
+if (totalPrice) {
+  totalPrice.textContent = price;
+}
 function isChange() {
   if(document.getElementById('add350').checked){
     price += 350;
@@ -290,5 +301,18 @@ function isChangeTwo() {
   } else {
     price -= 250;
     totalPrice.textContent = price;
+  }
+}
+
+
+// replace video with image for touchscreen
+const videoBlock = document.querySelector('.video-for-pc'),
+      imageBlock = document.querySelector('.img-for-touch');
+if (document.body.classList.contains('touch')) {
+  if (videoBlock) {
+    videoBlock.style.display = 'none';
+  }
+  if (imageBlock) {
+    imageBlock.style.display = 'block';
   }
 }

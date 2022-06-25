@@ -24,6 +24,12 @@ body.lock {
   overflow: hidden;
 }
 
+.header.overlay,
+.page.overlay,
+.footer.overlay {
+  opacity: 0.5;
+}
+
 img,
 picture,
 video,
@@ -1067,6 +1073,7 @@ body.touch .menu-list > li.active .menu-sub-list {
   max-height: 90vh;
   -o-object-fit: cover;
      object-fit: cover;
+  display: block;
 }
 .page .about .about-video .img-for-touch {
   background: url("../img/about/rsz_furniture-delivery.webp") no-repeat;
