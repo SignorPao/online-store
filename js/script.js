@@ -206,20 +206,6 @@ new Swiper('.review-slider', {
 });
 
 
-// add opacity when nav menu is open
-// const navSubList = document.querySelectorAll('.menu-sub-list'),
-//       allPage = document.querySelectorAll('.header, .page, .footer');
-// navSubList.forEach(sub => {
-//   sub.addEventListener('mouseover', () => {
-//     if (sub.style.visibility == visible) {
-//       allPage.forEach(el => {
-//         el.classList.toggle('overlay');
-//       });
-//     }
-//   });
-// });
-
-
 // product.html
 const swiperProduct = new Swiper('.choice-slider', {
   slidesPerView: 1,
