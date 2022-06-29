@@ -366,7 +366,7 @@
   }
 
   .reviews-block {
-    padding: 30px 30px 60px 30px;
+    padding: 30px;
     @include limitContainer;
 
     .reviews-block-header {
@@ -571,8 +571,31 @@
         }
       }
     }
+  }
 
-    // .reviews-block-pag {}
+  .product-pagination {
+    margin-bottom: 60px;
+
+    .product-pagination-items {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+
+      .pagination-item {
+        @include fontSize(14px, 300);
+        color: $grey;
+        cursor: pointer;
+        
+        &.active {
+          @include fontSize(14px, 500);
+        }
+        
+        i {
+          @include fontSize(20px, 900);
+        }
+      }
+    }
   }
 
   @media (min-width: 992px) {

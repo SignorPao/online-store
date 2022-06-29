@@ -1797,7 +1797,7 @@ body.touch .menu-list > li.active .menu-sub-list {
   color: #595756;
 }
 .product-main .reviews-block {
-  padding: 30px 30px 60px 30px;
+  padding: 30px;
   max-width: 1200px;
   margin: 0px auto;
 }
@@ -2040,6 +2040,35 @@ body.touch .menu-list > li.active .menu-sub-list {
 }
 .product-main .reviews-block .reviews-block-posts .post .post-link:hover {
   text-decoration: none;
+}
+.product-main .product-pagination {
+  margin-bottom: 60px;
+}
+.product-main .product-pagination .product-pagination-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 20px;
+}
+.product-main .product-pagination .product-pagination-items .pagination-item {
+  font-size: 14px;
+  font-weight: 300;
+  color: #595756;
+  cursor: pointer;
+}
+.product-main .product-pagination .product-pagination-items .pagination-item.active {
+  font-size: 14px;
+  font-weight: 500;
+}
+.product-main .product-pagination .product-pagination-items .pagination-item i {
+  font-size: 20px;
+  font-weight: 900;
 }
 @media (min-width: 992px) {
   .product-main .choice-block {
